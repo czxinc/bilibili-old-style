@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         B站仿旧版样式（播放页）_stylus（JS版）
-// @namespace    github.com/openstyles/stylus
-// @version      2.0.0
-// @description  B站仿旧版样式，仅播放页
+// @name         B站仿旧版样式（搜索页(beta)、播放页）_stylus（JS版）
+// @namespace    github.com/czxinc/bilibili-old-style
+// @version      2.1.0
+// @description  B站仿旧版样式，仅播放页，搜索页还在改造中
 // @author       CZX Fuckerman
 // @license      GPL
 // @match        https://*.bilibili.com/*
@@ -1105,6 +1105,16 @@
         styleNode.appendChild(document.createTextNode(`
   .i_wrapper.video.search-all-list,
   .i_wrapper.search-page.search-page-video {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    width: 980px !important;
+  }
+  .search-page.search-page-all>.i_wrapper.mt_xxl {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    width: 980px !important;
+  }
+  .search-page-wrapper>.i_wrapper.mt_xxl {
     padding-left: 0px !important;
     padding-right: 0px !important;
     width: 980px !important;
