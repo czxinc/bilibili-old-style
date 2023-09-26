@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         B站仿旧版样式（播放页）_stylus（JS版）
 // @namespace    github.com/openstyles/stylus
-// @version      1.9.3
+// @version      2.0.0
 // @description  B站仿旧版样式，仅播放页
 // @author       CZX Fuckerman
 // @license      GPL
@@ -19,33 +19,9 @@
     var menuIds = [];
 
     function setCss(){
-        if(location.href.startsWith("https://www.bilibili.com/video/")){
+        if(location.href.startsWith("https://www.bilibili.com/video/") || location.href.startsWith("https://search.bilibili.com/")){
         let styleNode = document.createElement("style");
         styleNode.appendChild(document.createTextNode(`
-  body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif;
-    font-size: 12px;
-    line-height: 1.5;
-    color: #222;
-    background-color: #fff;
-  }
-  a {
-    color: #222;
-    background-color: transparent;
-    text-decoration: none;
-    outline: none;
-    cursor: pointer;
-    transition: color 0.3s;
-    -webkit-text-decoration-skip: objects;
-  }
-  .harmony-font {
-    -webkit-font-smoothing: antialiased;
-    font: 14px -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif;
-    z-index: 1000;
-    margin: 0;
-    padding: 0;
-  }
   #biliMainHeader {
     height: 56px !important;
   }
@@ -406,6 +382,37 @@
     width: 15.1px;
     height: 15.1px;
   }
+`));
+        styleNode.setAttribute("bilibili-old-style-fragment", "0");
+        document.documentElement.appendChild(styleNode);
+    }
+    if(location.href.startsWith("https://www.bilibili.com/video/")){
+        let styleNode = document.createElement("style");
+        styleNode.appendChild(document.createTextNode(`
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #222;
+    background-color: #fff;
+  }
+  a {
+    color: #222;
+    background-color: transparent;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+    transition: color 0.3s;
+    -webkit-text-decoration-skip: objects;
+  }
+  .harmony-font {
+    -webkit-font-smoothing: antialiased;
+    font: 14px -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif;
+    z-index: 1000;
+    margin: 0;
+    padding: 0;
+  }
   .left-container {
     max-width: 1280px;
   }
@@ -433,6 +440,17 @@
   }
   .video-info-detail .video-info-detail-list .pubdate-ip .pubdate .pubdate-text {
     font-size: inherit !important;
+  }
+  .video-info-detail .video-info-detail-list .honor {
+    font-size: 12px;
+  }
+  .video-info-detail .video-info-detail-list .honor.honor-rank .honor-icon {
+    width: 12px;
+    height: 12px;
+  }
+  .video-info-detail .video-info-detail-list .honor.honor-rank .honor-arrow {
+    width: 5px;
+    height: 8px;
   }
   #bilibili-player:has(.bpx-player-container:not([data-screen = "web"]):not([data-screen = "full"]):not([data-screen = "wide"])) {
     max-width: 1280px;
@@ -1079,7 +1097,118 @@
     border-radius: 2px !important;
   }
 `));
-        styleNode.setAttribute("bilibili-old-style-fragment", "0");
+        styleNode.setAttribute("bilibili-old-style-fragment", "1");
+        document.documentElement.appendChild(styleNode);
+    }
+    if(location.href.startsWith("https://search.bilibili.com/")){
+        let styleNode = document.createElement("style");
+        styleNode.appendChild(document.createTextNode(`
+  .i_wrapper.video.search-all-list,
+  .i_wrapper.search-page.search-page-video {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    width: 980px !important;
+  }
+  .video-list.row>div {
+    flex: 0 0 20% !important;
+    max-width: none !important;
+  }
+  .bili-video-card {
+    height: 208px;
+    width: 168px;
+    border: 1px solid #e5e9ef;
+    border-radius: 4px;
+    box-sizing: content-box;
+  }
+  .bili-video-card .bili-video-card__image {
+    height: 100px;
+    border-radius: 4px !important;
+  }
+  .bili-video-card .bili-video-card__image:hover .bili-video-card__mask {
+    opacity: inherit !important;
+    visibility: visible !important;
+  }
+  .bili-video-card .bili-video-card__image:hover .bili-video-card__stats:before {
+    opacity: 0;
+  }
+  .bili-video-card .bili-video-card__wrap {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .bili-video-card .bili-video-card__image--wrap {
+    padding-top: 0px !important;
+  }
+  .bili-video-card .bili-video-card__image--wrap .bili-watch-later,
+  .bili-video-card .bili-video-card__image--wrap picture {
+    border-radius: inherit !important;
+    object-fit: fill !important;
+  }
+  .bili-video-card .bili-video-card__stats {
+    border-bottom-left-radius: 4px !important;
+    border-bottom-right-radius: 4px !important;
+    padding: 0px !important;
+    background-image: none !important;
+    height: auto !important;
+  }
+  .bili-video-card .bili-video-card__stats--left {
+    position: relative;
+    top: 75px !important;
+    left: 9px !important;
+    color: #99a2aa !important;
+    font-size: 12px !important;
+    line-height: 16px !important;
+  }
+  .bili-video-card .bili-video-card__stats--left svg {
+    color: #99a2aa !important;
+    width: 16px !important;
+    height: 16px !important;
+  }
+  .bili-video-card .bili-video-card__stats__duration {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    line-height: 18px;
+    padding: 0 5px;
+    color: #fff;
+    background-color: #333;
+    background-color: rgba(0,0,0,0.5);
+    border-top-left-radius: 4px;
+  }
+  .bili-video-card .bili-video-card__info {
+    padding: 8px 10px 0 !important;
+    margin-top: 0px !important;
+    flex: 1;
+  }
+  .bili-video-card .bili-video-card__info--tit {
+    font-size: 12px !important;
+    line-height: 20px !important;
+    color: #222 !important;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif !important;
+    padding-right: 0px !important;
+    height: 40px !important;
+  }
+  .bili-video-card .bili-video-card__info--right {
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+  }
+  .bili-video-card .bili-video-card__info--bottom {
+    margin-bottom: 8px !important;
+    font-size: 12px !important;
+    line-height: 16px !important;
+    color: #99a2aa !important;
+  }
+  .bili-video-card .bili-video-card__info--bottom svg {
+    width: 15px !important;
+    height: 15px !important;
+  }
+  .bili-video-card .bili-video-card__info--bottom svg use {
+    stroke-width: 2px;
+  }
+`));
+        styleNode.setAttribute("bilibili-old-style-fragment", "2");
         document.documentElement.appendChild(styleNode);
     }
     

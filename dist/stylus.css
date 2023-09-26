@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           B站仿旧版样式（播放页）_stylus（stylus版）
 @namespace      github.com/openstyles/stylus
-@version        1.9.3
+@version        2.0.0
 @preprocessor    stylus
 @description    B站仿旧版样式，仅播放页
 @author         CZX Fuckerman
@@ -14,32 +14,8 @@ leftWidth = 1280 //宽度
 unitToPx(num)
 	unit(num, 'px')
 
-@-moz-document url-prefix("https://www.bilibili.com/video/")
-	body
-		margin: 0
-		font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif
-		font-size: 12px
-		line-height: 1.5
-		color: #222
-		background-color: #fff
-		
-	a
-		color: #222
-		background-color: transparent
-		text-decoration: none
-		outline: none
-		cursor: pointer
-		transition: color .3s
-		-webkit-text-decoration-skip: objects
 
-	.harmony-font 
-		-webkit-font-smoothing: antialiased
-		font: 14px -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif
-		z-index: 1000
-		margin: 0
-		padding: 0
-		
-
+@-moz-document url-prefix("https://www.bilibili.com/video/"), url-prefix("https://search.bilibili.com/")
 	/* header start */
 	#biliMainHeader
 		height: 56px!important
@@ -373,12 +349,31 @@ unitToPx(num)
 		width: 15.1px;
 		height: 15.1px;
 	/* header end */
-		
-		
-		
-		
 
+@-moz-document url-prefix("https://www.bilibili.com/video/")
+	body
+		margin: 0
+		font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif
+		font-size: 12px
+		line-height: 1.5
+		color: #222
+		background-color: #fff
 		
+	a
+		color: #222
+		background-color: transparent
+		text-decoration: none
+		outline: none
+		cursor: pointer
+		transition: color .3s
+		-webkit-text-decoration-skip: objects
+
+	.harmony-font 
+		-webkit-font-smoothing: antialiased
+		font: 14px -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif
+		z-index: 1000
+		margin: 0
+		padding: 0
 		
 		
 	/* 左侧项目 start */
@@ -393,7 +388,9 @@ unitToPx(num)
 				font-size: 18px!important;
 				font-weight: 500!important;
 				line-height: 26px!important;
-		
+	
+	
+				
 	.video-info-detail
 		font-size: 12px!important;
 		height: 16px!important;
@@ -408,6 +405,15 @@ unitToPx(num)
 				.pubdate
 					.pubdate-text
 						font-size: inherit!important;
+			.honor
+				font-size:12px;
+				&.honor-rank
+					.honor-icon
+						width: 12px;
+						height: 12px;
+					.honor-arrow
+						width: 5px;
+						height: 8px;
 						
 
 			
@@ -1070,3 +1076,110 @@ unitToPx(num)
 
 	/* 注释 start */
 	/* 注释 end */
+
+
+
+@-moz-document url-prefix("https://search.bilibili.com/")
+	svgSize=15px //图标尺寸（长和宽）
+	/* 容器宽度 start */
+	.i_wrapper
+		&.video.search-all-list
+		&.search-page.search-page-video	//临时 视频项目容器宽度
+			padding-left:0px!important;
+			padding-right:0px!important;
+			width:980px!important;	
+	/* 容器宽度 end */
+			
+	/* 视频项目 start */
+	.video-list.row
+		&>div
+			flex:0 0 20%!important;
+			max-width:none!important;
+		/* .to_hide_xs
+		.to_hide_md
+		.to_hide_xl
+			display:block!important;
+		&>div:nth-last-child(1)
+		&>div:nth-last-child(2)
+			display:none!important; */
+	.bili-video-card
+		height: 208px;
+		width: 168px;
+		border: 1px solid #e5e9ef;
+		border-radius: 4px;
+		box-sizing: content-box;
+		.bili-video-card__image
+			height: 100px;
+			border-radius: 4px!important;
+			&:hover
+				.bili-video-card__mask
+					opacity: inherit!important;
+					visibility: visible!important;
+				.bili-video-card__stats
+					&:before
+						opacity: 0;
+		.bili-video-card__wrap
+			height: 100%
+			display: flex;
+			flex-direction:column;
+		.bili-video-card__image--wrap
+			padding-top: 0px!important;
+			.bili-watch-later
+			picture
+				border-radius:inherit!important;
+				object-fit:fill!important;
+		.bili-video-card__stats
+			border-bottom-left-radius: 4px!important;
+			border-bottom-right-radius: 4px!important;
+			padding: 0px!important;
+			background-image: none!important;
+			height: auto!important;
+			&--left //播放量和弹幕量 把它从视频那边拽到信息那边
+				position: relative;
+				top: 75px!important;
+				left: 9px!important;
+				color: #99a2aa!important;
+				font-size: 12px!important;
+				line-height: 16px!important;
+				svg
+					color:#99a2aa!important;
+					width: svgSize+1!important;
+					height: svgSize+1!important;
+			&__duration //视频长度
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				line-height: 18px;
+				padding: 0 5px;
+				color: #fff;
+				background-color: #333;
+				background-color: rgba(0,0,0,.5);
+				border-top-left-radius: 4px;
+		.bili-video-card__info //视频信息
+			padding: 8px 10px 0!important;
+			margin-top: 0px!important;
+			flex: 1;
+			&--tit //标题
+				lineHeight=20px
+				font-size:12px!important;
+				line-height:lineHeight!important;
+				color: #222!important;
+				font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif !important;
+				padding-right: 0px!important;
+				height:lineHeight*2!important;
+			&--right
+				height: 100%!important;
+				display: flex!important;
+				flex-direction: column!important;
+				justify-content: space-between!important;
+			&--bottom
+				margin-bottom: 8px!important;
+				font-size:12px!important;
+				line-height: 16px!important;
+				color:#99a2aa!important;
+				svg
+					width: svgSize!important;
+					height: svgSize!important;
+					use
+						stroke-width: 2px; //图片尺寸，但没有作用，需要找其他方法
+	/* 视频项目 end */
