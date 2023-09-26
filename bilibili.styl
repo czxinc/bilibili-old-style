@@ -1,0 +1,1071 @@
+/* ==UserStyle==
+@name           B站仿旧版样式（播放页）_stylus
+@namespace      github.com/openstyles/stylus
+@version        1.9.2
+@preprocessor    stylus
+@description    B站仿旧版样式，仅播放页
+@author         CZX Fuckerman
+@license      GPL
+
+==/UserStyle== */
+
+//@var number leftWidth "左侧宽度" 1280
+leftWidth = 1280 //宽度
+
+unitToPx(num)
+	unit(num, 'px')
+
+@-moz-document url-prefix("https://www.bilibili.com/video/")
+	body
+		margin: 0
+		font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif
+		font-size: 12px
+		line-height: 1.5
+		color: #222
+		background-color: #fff
+		
+	a
+		color: #222
+		background-color: transparent
+		text-decoration: none
+		outline: none
+		cursor: pointer
+		transition: color .3s
+		-webkit-text-decoration-skip: objects
+
+	.harmony-font 
+		-webkit-font-smoothing: antialiased
+		font: 14px -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif
+		z-index: 1000
+		margin: 0
+		padding: 0
+		
+
+	/* header start */
+	#biliMainHeader
+		height: 56px!important
+
+	.bili-header
+		height: 56px!important
+		.bili-header__bar
+			padding: 10px 24px
+			height: 56px
+		.left-entry
+			.default-entry
+				margin-right: 12px!important;
+		.left-entry__title
+			.mini-header__logo
+				width: 70px
+				height: 32px
+				path
+					fill: #00a1d6
+		.right-entry
+			.right-entry__outside
+				.right-entry-icon
+					display: none;
+				.right-entry-text
+					color: #212121;
+					text-shadow: none;
+					line-height: 30px;
+					display: block!important;
+			.right-entry-item
+				min-width: 0px;
+				margin-right: 0px;
+			.right-entry-item--upload
+				.v-popover-wrap
+					margin-left: 0px;
+			.right-entry--vip
+				.red-point
+					right: -8px;
+		.right-entry__outside
+			-webkit-font-smoothing: antialiased;
+			font: 14px -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif;
+			min-width: 0px;
+			margin: 0px 0px 0px 12px!important;
+			&.go-login-btn
+				width: 64px;
+		.red-num--message 
+			background-color: #FA5A57;
+			text-align: center;
+			color: #fff;
+			min-width: 16px;
+			height: 16px;
+			padding: 0 3px;
+			border-radius: 8px;
+			line-height: 16px;
+			font-size: 12px;
+			top: -7px;
+			right: -10px;
+			left: auto;
+		.red-num--dynamic
+			left: auto;
+			right: -10px;
+		.v-popover-wrap
+			&.right-entry__outside
+				&.right-entry--message
+					margin: 0px 0px 0px 0px!important;
+			.header-favorite-container
+				height: 100%;
+				min-width: 0px;
+				.header-favorite-container-box
+					margin-top: 0px;
+					.header-favorite-container__down
+						display: none;
+		.header-entry-mini
+			width: 40px;
+			height: 40px;
+			left: 0px;
+			top: 0px;
+			.v-img
+				>img
+					border: 0px;
+		.header-avatar-wrap
+			width: 50px;
+			height: 40px;
+			margin-left: 12px;
+			padding-right: 0px;
+		.header-upload-entry
+			cursor: pointer;
+			position: relative;
+			color: #fff;
+			font-size: 14px;
+			display: block;
+			width: 100px;
+			height: 36px;
+			line-height: 36px;
+			text-align: center;
+			background: #fb7299;
+			border-radius: 2px;
+			margin-left: 14px;
+			.header-upload-entry__text
+				display: block!important;
+			.header-upload-entry__icon
+				display: none;
+		.center-search-container
+			.center-search__bar
+				&.is-focus
+					box-shadow: none
+					border-radius: 0px
+				#nav-searchform
+					display: block;
+					padding: 0 48px 0 16px;
+					border-radius: 2px!important;
+					background: #F4F4F4;
+					border: 1px solid #E7E7E7;
+					position: inherit;
+					height: inherit;
+					background: var(--bg3)!important;
+				.nav-search-content
+					padding: 0px;
+					background: inherit!important;
+					.nav-search-input 
+						word-break: break-all;
+						overflow: hidden;
+						width: 100%;
+						height: 34px;
+						border: none;
+						background-color: transparent;
+						box-shadow: none;
+						color: #999;
+						font-size: 14px;
+						line-height: 34px;
+						transition: all 0.2s;
+						&:focus
+							background-color: inherit;
+							color: #999;
+				.is-actived
+					.nav-search-content
+						.nav-search-input
+							&:focus
+								color: #222222;
+				.nav-search-btn
+					position: absolute;
+					top: 0px;
+					right: 0;
+					margin: 0;
+					padding: 0;
+					width: 48px;
+					height: 36px;
+					border: none;
+					border-radius: 2px;
+					background: #e7e7e7;
+					line-height: 26px;
+					cursor: pointer;
+					display: inherit;
+					transition: none;
+					svg
+						position: absolute;
+						top: 7px;
+						right: 16px;
+						margin: 0;
+						padding: 0;
+						border: none;
+						background: none;
+						color: #505050;
+						font-size: 16px;
+						line-height: 20px;
+						cursor: pointer;
+						transition: all 0.2s;
+		.search-panel
+			background: #ffffff;
+			border: 1px solid #e6e9ee;
+			box-sizing: border-box;
+			box-shadow: 0px 2px 4px rgba(0 0 0 10%);
+			border-radius: 2px;
+			padding: 16px 0;
+			margin-top: 2px;
+			font-family: PingFang SC, sans-serif;
+			font-style: normal;
+			font-weight: normal;
+			color: #212121;
+			-webkit-font-smoothing: antialiased;
+		.message-entry-popover
+			min-width: 173px;
+			.message-inner-list
+				padding: 10.058px 0;
+				color: #212121;
+			.message-inner-list__item
+				padding: 0px 0px 0px 20.116px;
+				line-height: 36.2093px;
+				font-size: 14px;
+				color: inherit;
+		.header-dynamic-avatar
+			width: 34.1px!important;
+			height: 34.1px!important;
+			border: 0px!important;
+		.header-dynamic-list-item
+			transition: 0.3s!important;
+			&:hover
+				background-color: #f4f4f4!important;
+			.header-dynamic__box--right
+				top: 0px!important;
+				width: auto!important;
+			.dynamic-info-content
+				font-size: 13.267px!important;
+				font-weight: 500!important;
+				color: #212121!important;
+				margin: 5.68px 0px!important;
+				line-height: normal!important;
+
+	.bili-header .header-dynamic-list-item .dynamic-name-line,
+	.publish-time 
+		font-size: 12px!important;
+		color: #505050!important;
+		
+	.wnd_bottom 
+		height: 60.64px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 0px 18.95px;
+		.r-l
+			height: 30.313px;
+			width: auto;
+			margin: 0px;
+			border-radius: 0px;
+			color: #212121;
+			font-size: 13.267px;
+			background-color: #f4f4f4;
+			line-height: normal;
+			transition: box-shadow 0.1s;
+			flex: 1;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-family: auto;
+			&:hover
+				background-color: #e7e7e7;
+    
+			
+	.right-entry
+		.v-popover-wrap
+			&.right-entry-message
+				margin-left: 12px!important;	
+				
+	.v-popover-content
+		border-radius: 2px;
+		box-shadow: 0 3px 6px 0 rgba(0 0 0 20%);
+		
+	.dynamic-panel-popover
+		width: 350.63px;
+		.header-tabs-panel
+			font-size: 12px;
+			color: #999;
+			line-height: 15.1px;
+			height: 45.5px;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			padding-left: 19px;
+			border-bottom: 1px solid #e7e7e7;
+			user-select: none;
+			justify-content: normal;
+		.header-tabs-panel__content
+			min-height: 113.717px;
+			max-height: 444.445px;
+		.header-tabs-panel__item
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 0px 22.743px 0px 0px;
+			padding: 0px;
+			border-radius: 30px;
+			cursor: pointer;
+			transition: 0.3s ease;
+			z-index: 1;
+			flex: inherit;
+			font-size: 12px;
+			line-height: 15px;
+			border-bottom: none;
+		.header-tabs-panel__item--active
+			background-color: #00a1d6;
+			color: #fff;
+			padding: 3.79px 9.5px;
+			margin: 0px 13.267px 0px 0px;
+			border-bottom: none;
+		.cover
+			width: 60.641px!important;
+			height: 34.109px!important;
+			border-radius: 1.895px!important;
+			
+	.dynamic-article
+		.tip-box 
+			color: #999!important;
+			font-size: 13.267px!important;
+			display: flex!important;
+			justify-content: center!important;
+			align-items: center!important;
+			height: 94.75px!important;
+			
+	.dynamic-video-item
+		line-height: normal!important;
+    
+			
+	.v-popover
+		&.is-bottom
+			padding-top: 13px!important;
+			&::before
+				content: '';
+				width: 10px;
+				height: 7px;
+				display: block;
+				position: absolute;
+				top: 11px;
+				left: calc(50% - 5px) !important;
+				-webkit-transform: rotate(45deg);
+				transform: rotate(45deg);
+				background-color: white;
+				-webkit-box-shadow: -1px -1px 1px rgba(0 0 0 5%);
+				box-shadow: -1px -1px 1px rgba(0 0 0 5%);
+				z-index: 1;
+				
+
+	
+	.watch-later
+		width: 20.844px!important;
+		height: 20.844px!important;
+		.bili-watch-later__icon
+			width: 15px!important;
+			height: 15px!important;
+	
+	.bili-avatar-right-icon
+		width: 15.1px;
+		height: 15.1px;
+	/* header end */
+		
+		
+		
+		
+
+		
+		
+		
+	/* 左侧项目 start */
+	.left-container
+		max-width: unitToPx(leftWidth);
+		
+	.video-info-container
+		height: 96px!important;
+		padding-top: 27px!important;
+		box-sizing: border-box!important;
+		.video-title //视频标题
+				font-size: 18px!important;
+				font-weight: 500!important;
+				line-height: 26px!important;
+		
+	.video-info-detail
+		font-size: 12px!important;
+		height: 16px!important;
+		color: #999!important;
+		display: flex!important;
+		align-items: center!important;
+		text-overflow: ellipsis!important;
+		white-space: nowrap!important;
+		.video-info-detail-list
+			.pubdate-ip
+				font-size: inherit!important;
+				.pubdate
+					.pubdate-text
+						font-size: inherit!important;
+						
+
+			
+
+
+	/* 视频 start */
+	#bilibili-player:has(.bpx-player-container:not([data-screen = "web"]):not([data-screen = "full"]):not([data-screen = "wide"]))
+		max-width: unitToPx(leftWidth);
+
+
+	#bilibili-player
+		height: 100%;
+		
+	#playerWrap:has(.bpx-player-container:not([data-screen = "web"]):not([data-screen = "full"]):not([data-screen = "wide"])) //保持16：9（1280x720）
+		max-height: unit(766,"px")
+	
+	//播放器下方栏
+	.bpx-player-sending-bar
+		display: flex!important;
+		flex: none!important;
+		justify-content: space-between!important;
+		height: 46px!important;
+		padding: 0 12px 0 20px!important;
+		//background: #fff!important;
+		font-size: 12px!important
+		.bpx-player-video-info-online
+			b
+				font-weight: bold!important;
+		.bpx-player-video-inputbar
+			border-radius: 2px!important;
+			.bpx-player-dm-btn-send
+				border-radius: 0 2px 2px 0!important;
+	
+	@media (min-width: 1681px)
+		#bilibili-player-placeholder		// 
+		#bilibili-player					// 修 小窗口播放器上下窗口有黑框
+			height: calc(100% - 10px);
+				
+	//弹幕列表按钮
+	.bui-collapse
+		.bui-collapse-header
+			border-radius: 2px!important;
+	
+	/* 视频 end */	
+
+
+	/* 视频下方工具栏 start */
+	.video-toolbar-container
+		.video-toolbar-left
+			.toolbar-left-item-wrap 
+				margin-right: 8px!important;
+		.video-toolbar-right
+			.toolbar-right-note
+				margin-right: 0px!important;
+				 .video-note-inner
+					/* position: relative; */
+					margin-right: 25px!important;
+					width: 71px;
+					height: 24px;
+					align-items: center;
+					justify-content: center;
+					border-radius: 2px;
+					cursor: pointer;
+					font-size: 12px!important;
+					line-height: 20px;
+					border: 1px solid #00a1d6;
+					color: #00a1d6;
+					background: #fff;
+					transition: 0.3s;
+					&:hover
+						color: #fff!important;
+						background: #00a1d6!important;
+				
+	.video-toolbar-left-item
+		width: 92px!important;
+		.video-toolbar-item-icon
+			width: 28px!important;
+			height: 28px!important;
+			
+	.video-toolbar-right-item
+		font-size: 12px!important;
+		.video-toolbar-item-icon
+			width: 16px;
+			height: 20px;
+			fill: #00a1d6;
+			transition: 0.3s;
+			&.video-complaint-icon
+				display: none;
+				
+	.toolbar-right-note
+		.video-toolbar-item-text
+			transition: 0.3s;
+			&:hover
+				.video-toolbar-item-icon
+					fill: #fff!important;
+				.video-toolbar-item-text
+					color: #fff!important;
+					
+	.video-tool-more
+		.video-tool-more-reference
+			.video-tool-more-icon 
+				width: 20px!important;
+				height: 24px!important;
+				
+	.video-tool-more-popover
+		display: block;
+		position: absolute;
+		width: 80px;
+		min-width: 0px;
+		left: -65px;
+		z-index: 30;
+		text-align: center;
+		padding: 10px 0;
+		background: #ffffff;
+		border: 1px solid #e5e9ef;
+		box-shadow: 0 2px 4px 0 rgba(0 0 0 14%);
+		border-radius: 2px;
+		font-size: 14px;
+		color: #222;
+		.video-tool-more-dropdown
+			.dropdown-item
+				position: relative;
+				height: 34px;
+				line-height: 34px;
+				cursor: pointer;
+				transition: all 0.3s;
+				justify-content: center;
+				padding: 0px;
+				.video-toolbar-item-text
+					font-size: 14px!important;
+				svg
+					display: none;
+	
+	.video-share-popover
+		border-radius: 2px;
+		-webkit-box-shadow: 0 2px 4px 0 rgba(0 0 0 14%);
+		box-shadow: 0 2px 4px 0 rgba(0 0 0 14%);
+		border: 1px solid #e5e9ef;
+		.video-share-dropdown
+			.dropdown-top
+				padding: 20px 10px 12px 10px;
+			.dropdown-bottom
+				padding: 20px 10px;
+	/* 视频下方工具栏 end */
+
+	/* 视频简介 start */
+	.video-desc-container
+		.basic-desc-info
+			font-size: 12px!important;
+			line-height: 18px!important;
+	/* 视频简介 end */
+
+	/* 视频标签 start */
+	.video-tag-container
+		.tag-panel
+			/* width: 670px!important; */
+			.tag
+				margin: 0px!important;
+				.show-more-btn
+					display: none;
+				&.not-btn-tag
+					display: block!important;
+			.tag-link
+				float: left;
+				margin: 0 10px 8px 0;
+				background: #F6F7F8;
+				border-radius: 100px;
+				padding: 0 12px;
+				position: relative;
+				height: 22px;
+				line-height: 22px;
+				transition: all 0.3s;
+				font-size: 12px;
+				border: 1px solid transparent;
+				box-sizing: content-box;
+				&:hover
+					border-color: #00a1d6;
+				.tag-icon
+					width: 14px!important;
+					height: 14px!important;
+
+					
+
+	.newchannel-tag
+		.tag-link
+			&.newchannel-link
+				.newchannel-tag-icon
+					fill: #9499a0;
+					margin-right: 5px!important;
+					path
+						fill: inherit;
+						
+	
+	
+	/* 视频标签 end */
+
+	/* 评论上面的广播公告栏 start */
+	.reply-header
+		.reply-notice
+			box-sizing: content-box;
+			background-color: #FFF1D3!important;
+			border: 1px solid #F8DFAA!important;
+			color: #E78B1F!important;
+			border-radius: 4px;
+			padding: 0px 15px 0px 10px!important;
+			&::after
+				background-color: inherit!important;
+				opacity: 0!important;
+			.svg-icon
+				&.notice
+					width: 21px!important;
+					height: 21px!important;
+					svg
+						path
+							fill: #e78b1f;
+			.notice-content
+				line-height: 20px;
+				font-size: 14px;
+				font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+				padding-left: 13px!important;
+	/* 评论上面的广播公告栏 end */
+
+	/* 评论 start */
+	.bili-comment.browser-pc
+		*
+			font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+			a
+				outline: none;
+				color: #00a1d6;
+				text-decoration: none;
+				cursor: pointer;
+				&:hover
+					color: #f25d8e;
+					
+	.reply-header
+		.reply-navigation
+			.nav-bar
+				.nav-title
+					font-size: 18px!important;
+					line-height: 24px!important;
+					font-weight: normal!important;
+					.nav-title-text
+						font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif!important;
+					.total-reply
+						color: inherit!important;
+						font-size: 18px!important;
+						font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif!important;
+				.nav-sort
+					font-size: 14px!important;
+					color: #222!important;
+					.hot-sort
+					.time-sort
+						font-weight: bold!important;
+					&.hot .hot-sort
+					&.time .time-sort
+						color: #00a1d6!important;
+	
+	.emoji-panel
+		margin-top: 7px;
+		margin-bottom: 10px;
+		box-shadow: 0 11px 12px 0 rgba(106 115 133 30%);
+		top: 27px;
+		.emoji-content
+			height: 196px!important;
+			
+	.reply-list
+		.login-prompt //登录评论按钮
+			border-radius: 4px!important;
+	
+	.reply-box
+		.box-normal
+			.reply-box-send
+				background-color: #00a1d6;
+				border: 1px solid #00a1d6;
+				transition: 0.1s;
+				&:hover
+					background-color: #00b5e5;
+					border-color: #00b5e5;
+				&:after
+					content: none!important;
+			.reply-box-warp
+				.reply-box-textarea
+					font-size: 12px;
+					line-height: normal!important;
+					&:hover
+						border-color: #00a1d6!important;
+						background-color: #fff!important;
+		&.disabled
+			.box-normal
+				.reply-box-send
+					background-color: #e5e9ef !important;
+					border-color: #e5e9ef !important;
+					color: #b8c0cc !important;
+		&.fixed-box
+			.box-normal
+				.reply-box-warp
+					.reply-box-textarea
+						padding-top 10px
+	
+	.main-reply-box
+		.box-normal
+			height: 65px!important;
+			.reply-box-send
+				width: 70px!important;
+				height: 64px!important;
+			.reply-box-wrap
+				.reply-box-textarea
+					height: 65px!important;
+					
+	.reply-item
+		.root-reply-container
+			padding-left: 85px!important;
+			padding-top: 24px!important;
+			.root-reply-avatar
+				width: 82px!important;
+				padding-top: 6px!important;
+			.content-warp
+				.user-info
+					font-size: 12px!important;
+					font-weight: bold!important;
+					line-height: 18px!important;
+					word-wrap: break-word!important;
+					height:22px!important;
+					.user-name
+						font-family: inherit!important;
+						font-weight: inherit!important;
+					.user-level
+						margin-left: 11px!important;
+						
+				.root-reply
+					font-size: 14px!important;
+					line-height: 20px!important;
+					.reply-info
+						font-size: 12px!important;
+						margin-top: 6px!important;
+						.reply-time
+							margin-right: 20px!important;
+						.reply-dislike
+							margin-right: 15px!important;
+						.reply-btn
+							padding: 0 5px;
+							border-radius: 4px;
+							margin-right: 15px;
+							cursor: pointer;
+							&:hover
+								color: #00a1d6!important;
+								background: #e5e9ef!important;
+		.sub-reply-container
+			padding-left: 78px!important;
+		&.login-limit-reply-end
+			.login-limit-mask //未登录遮罩
+				display: none!important;
+				
+	.sub-reply-item
+		font-size: 14px!important
+		line-height 20px!important
+		.sub-user-info
+			.sub-user-name
+				font-size: 12px!important;
+				font-weight: bold!important;
+				line-height: 18px!important;
+				word-wrap: break-word!important;
+				font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif!important;
+			.sub-user-level
+				margin-left: 11px;
+		.sub-reply-info
+			line-height: 14px!important;
+			margin-top: 6px!important;
+			font-size: 12px!important;
+			
+	.sub-reply-list
+		.view-more
+			font-size: 12px!important;
+			color: #6d757a!important;
+			font-weight: bolder!important;
+			.view-more-default
+				.view-more-btn
+					color: #00a1d6;
+					padding: 2px 3px;
+					border-radius: 4px;
+					&:hover
+						background: #e5e9ef;
+						color: #00a1d6;
+			.view-more-pagination
+				span
+					transition: color .3s;
+					line-height: 26px
+		
+	.reply-content-container
+		.reply-content
+			line-height: inherit;
+			font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,Helvetica,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,sans-serif;
+		.jump-link
+		.icon 
+			line-height inherit!important
+		.icon
+			vertical-align top!important
+			&.search-word
+				position: relative;
+				top: 2px;
+			
+			 
+	.reply-operation
+		.operation-list
+			padding: 10px 0!important;
+	/* 评论 end */
+
+	.image-exhibition
+		.preview-image-container
+			.image-item-wrap
+				border-radius: 4px!important;
+	
+	/* 左侧项目 end */
+
+	/* 右侧项目 start */
+	.video-container-v1
+		.right-container
+			max-width: 320px!important;
+	
+	/* 头像框 start */
+	.up-info-container
+		box-sizing: border-box!important;
+		height: 96px!important;
+		padding-top: 15px!important;
+		padding-bottom: 12px!important;
+		display: flex!important;
+		align-items: flex-start!important;
+		
+	.up-avatar-wrap
+		max-width:60px;
+		max-height:50px;
+		
+	.up-detail
+		.up-detail-top
+			.up-name
+				position: relative!important;
+				font-size: 14px!important;
+				color: #FB7299!important;
+				font-weight: 500!important;
+				display: inline-block!important;
+				max-width: 180px!important;
+				overflow: hidden!important;
+				text-overflow: ellipsis!important;
+				white-space: nowrap!important;
+				vertical-align: top!important;
+				margin-right: 0px!important;
+			.send-msg
+				margin-left: 12px!important;
+				font-size: 12px!important;
+				color: #505050!important;
+				display: inline-block!important;
+				vertical-align: middle!important;
+				i
+					color: #999!important;
+					font-size: 16px;
+					margin-right: 4px;
+					height: 16px;
+					width: 16px;
+					vertical-align: text-bottom;
+		.up-description
+			margin-top: 4px!important;
+			font-size: 12px!important;
+			line-height: 16px!important;
+			height: 16px!important;
+			color: #999!important;
+			overflow: hidden!important;
+			text-overflow: ellipsis!important;
+			white-space: nowrap!important;
+	/* 头像框 end */
+
+	/* 广告 start */
+	.slide-ad-exp
+		.slide-gg
+			height:182.857px!important;
+			border-radius: 2px!important;
+			
+	.ad-report.video-card-ad-small
+		//display: none!important;
+
+	.next-button
+		font-size: 12px!important;
+		color: #999!important;
+		line-height: 22px!important;
+		cursor: pointer!important;
+	/* 广告 end */
+
+	/* 右侧项目容器及分隔线 start */
+	.recommend-list-v1
+		.rec-title
+			font-size: 16px!important;
+			color: #222!important;
+			display: flex!important;
+			justify-content: space-between!important;
+			margin-bottom: 6px!important;
+		.split-line
+			background: #E5E9EF!important;
+			margin: 6px 0 12px!important;
+		.rec-list
+			margin: 0px!important;
+		.rec-footer
+			border-radius: 2px!important;
+		
+	/* 右侧项目容器及分隔线 end */
+
+	/* 右侧项目（视频） start */
+	.video-page-card-small
+	.video-page-special-card-small
+	.video-page-operator-card-small
+		padding: 6px 0!important;
+		margin-bottom: 0px!important;
+		&:first-child
+			padding-top:0px!important;
+		.card-box
+			.info
+				font-size: 12px!important;
+				.upname
+					height: 16px;
+					a
+						svg
+							display: none;
+			.pic-box
+				.pic
+					position: relative!important;
+					border-radius: 2px!important;
+					border-top-left-radius: 2px!important;
+					border-top-right-radius: 2px!important;
+					border-bottom-right-radius: 2px!important;
+					border-bottom-left-radius: 2px!important;
+			.playinfo
+				.play
+				.dm
+					/* display: none; */
+					height: 14px!important;
+					width: 14px!important;
+					position: relative;
+					top: -1px;
+					
+	.is-in-large-ab
+		.video-page-card-small
+		.video-page-special-card-small
+		.video-page-operator-card-small
+			.card-box
+				.info
+					.upname
+						margin: 0px 0px 4px 0px;
+					.title
+						display: block!important;
+						font-size: 14px!important;
+						font-weight: 500!important;
+						height: 36px!important;
+						line-height: 18px!important;
+						margin-bottom: 6px!important;
+						word-break: break-word!important;
+						overflow: hidden!important;
+						text-overflow: ellipsis!important;
+						display: box!important;	
+					.desc
+						font-size: 12px!important;
+				.pic-box
+					width: 141px!important;
+					height: 80px!important;
+					border-radius: 2px!important;
+					.framepreview-box
+						.video-awesome-img
+							width: 141px;
+							height: 80px;
+					.pic
+						.duration
+							font-size: 12px;
+							line-height: inherit;
+							height: 14px;
+					.cover
+						width: 80px!important;
+						height: 80px!important;
+						background: none!important;
+					
+	/* 右侧项目（视频） end */
+
+	/* 合集 start */
+	.video-sections-v1
+		border-radius: 2px!important;
+		.video-sections-item
+			width:295px!important;
+			
+	.base-video-sections-v1
+		border-radius: 2px!important;
+		/*.video-sections-head_first-line
+			.first-line-left
+				.first-line-title
+					height: 42px;
+					line-height: 42px;
+					font-size: 16px;
+					color: rgb(33, 33, 33);
+					font-weight: 400; */
+	/* 合集 end */
+
+	/* 分P项目 start */
+	.multi-page-v1
+		border-radius: 2px!important;
+		&.small-mode 
+			.cur-list
+				.list-box
+					li
+						width: 308px!important;
+	/* 分P项目 end */
+
+	/* 接下来播放上面的广告 start */
+	.video-card-ad-small
+		.vcd
+			.cover
+				.b-img[data-v-eba1a9e8]
+				img[data-v-eba1a9e8]
+					border-radius: 2px!important;
+					
+	.is-in-large-ab
+		.video-card-ad-small
+			.vcd
+				.cover
+					width: 141px!important;
+					height: 80px!important;
+					border-radius: 2px!important;
+				.info
+					line-height: 12px!important;
+					font-size: 12px!important;
+					word-break: keep-all!important;
+					display: flex;
+					flex-direction: column;
+					justify-content: space-between;		
+				.title
+					font-size: 14px!important;
+					font-weight: 500;
+					line-height: 18px!important;
+					word-break: break-word;
+					text-overflow: ellipsis;
+					-webkit-line-clamp: 2;
+	/* 接下来播放上面的广告 end */
+
+	/* 下面的广告和直播推荐 start */
+	.video-container-v1
+		.right-container
+			#right-bottom-banner
+				height: 160px!important;
+				border-radius: 2px!important;
+				
+	.pop-live-small-mode
+		.pl__
+			&title
+				font-size: 14px!important;
+			&name__text
+				font-size: 12px!important;
+			&user
+				font-size: 12px!important;
+			&cover
+			&mask
+				height: 180px!important;
+				border-radius: 2px!important;
+	/* 下面的广告和直播推荐 end */
+
+	/* 右侧项目 end */
+
+	/* 注释 start */
+	/* 注释 end */

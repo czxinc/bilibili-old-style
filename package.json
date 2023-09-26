@@ -1,0 +1,21 @@
+{
+  "name": "bilibili-old-style",
+  "version": "0.0.0",
+  "description": "",
+  "scripts": {
+    "build": "mkdirp dist && stylus  < bilibili.styl > dist/css.css && cpy bilibili.styl dist --rename=stylus.css && node js/stylus_process.js dist/stylus.css",
+    "css_to_js": "node js/css_to_js template.js dist/css.css dist/js.js",
+    "build_changelog": "node js/convert_changelog.js CHANGELOG.md dist/CHANGELOG.txt",
+    "process_css": "node js/css_process.js dist/css.css",
+    "get_version": "node js/get_version.js bilibili.styl",
+    "get_version_to_github_output": "node js/get_version.js bilibili.styl VERSION= >> "
+  },
+  "dependencies": {
+    "stylus": "^0.60.0",
+    "xregexp": "^5.1.1"
+  },
+  "devDependencies": {
+    "cpy-cli": "^4.2.0",
+    "mkdirp": "^3.0.1"
+  }
+}

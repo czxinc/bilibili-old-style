@@ -1,0 +1,66 @@
+name: "编译并发布release"
+
+on:
+  push:
+    branches: [ "master" ]
+
+jobs:
+  release:
+    name: "编译并发布release"
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - name: Merge master branch
+        uses: devmasx/merge-branch@master
+        with:
+          type: now
+          from_branch: master
+          target_branch: publish
+          github_token: ${{ secrets.OVERFLOW_TOKEN }}
+      - uses: actions/checkout@v3
+        with:
+          ref: publish
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      - name: Compile stylus to css and Convert css to js
+        run: |
+          npm install
+          npm run build
+          npm run css_to_js
+          npm run process_css
+      - name: Covert changelog.md to txt
+        run: |
+          npm run build_changelog
+      - name: set version variable
+        id: set_version
+        run: |
+          npm run get_version_to_github_output "$GITHUB_OUTPUT"
+      - name: echo version variable
+        run: echo "version=${{ steps.get_version.outputs.VERSION }}"
+        env:
+          VERSION: ${{ steps.set_version.outputs.VERSION }}
+      - name: auto commit dist
+        run: |
+          git config user.email "25028929+czxinc@users.noreply.github.com"
+          git config user.name "czxinc"
+          git pull
+          git add .
+          CHANGLOG=$(cat dist/CHANGELOG.txt)
+          git commit -m "$CHANGLOG"
+          git push
+      - name: add release
+        uses: softprops/action-gh-release@v1
+        with:
+          body_path: CHANGELOG.md
+          files: |
+            dist/stylus.css
+            dist/css.css
+            dist/js.js
+          tag_name:  v${{ steps.set_version.outputs.VERSION }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.OVERFLOW_TOKEN }}
+          VERSION: ${{ steps.set_version.outputs.VERSION }}
+
