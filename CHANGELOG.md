@@ -1,4 +1,6 @@
 ## 适配
-- 搜索页 顶部栏
-- 搜索页 搜索结果
-- 视频页 全站排行榜最高标签
+- 搜索页 加载中容器宽度
+
+## 其他
+- 修改UserStyle namespace为github页
+- 修改UserStyle name
