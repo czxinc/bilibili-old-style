@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         B站仿旧版样式（搜索页(beta)、播放页）_stylus（JS版）
+// @name         B站仿旧版样式（搜索页(beta)、播放页）（JS版）
 // @namespace    github.com/czxinc/bilibili-old-style
-// @version      2.1.0
+// @version      2.1.1
 // @description  B站仿旧版样式，仅播放页，搜索页还在改造中
 // @author       CZX Fuckerman
 // @license      GPL
