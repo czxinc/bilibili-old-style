@@ -5,6 +5,8 @@
 // @description  
 // @author       
 // @license      
+// @homepageURL  
+// @supportURL   
 // @match        https://*.bilibili.com/*
 // @icon         https://www.bilibili.com/favicon.ico
 // @grant        GM_registerMenuCommand
