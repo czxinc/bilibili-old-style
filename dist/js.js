@@ -1,10 +1,12 @@
 // ==UserScript==
-// @name         B站仿旧版样式（搜索页(beta)、播放页）（JS版）
+// @name         B站仿旧版样式（搜索页(beta)、播放页）（js版）
 // @namespace    github.com/czxinc/bilibili-old-style
 // @version      2.1.1
 // @description  B站仿旧版样式，仅播放页，搜索页还在改造中
 // @author       CZX Fuckerman
 // @license      GPL
+// @homepageURL  https://github.com/czxinc/bilibili-old-style
+// @supportURL   https://github.com/czxinc/bilibili-old-style
 // @match        https://*.bilibili.com/*
 // @icon         https://www.bilibili.com/favicon.ico
 // @grant        GM_registerMenuCommand
