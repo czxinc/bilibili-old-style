@@ -49,12 +49,14 @@ mozDocs.map((mozDoc, index, array)=> {
 
 var templateFileName = process.argv[2];
 var tContent = fs.readFileSync(templateFileName, 'utf8');
-moveHeader(/^@name[ ]+/gm, /^[/][/] @name[ ]+$/gm, "", "（JS版）");         //@name
+moveHeader(/^@name[ ]+/gm, /^[/][/] @name[ ]+$/gm, "", "（js版）");         //@name
 moveHeader(/^@namespace[ ]+/gm, /^[/][/] @namespace[ ]+$/gm, "", "");       //@namespace
 moveHeader(/^@version[ ]+/gm, /^[/][/] @version[ ]+$/gm, "", "");           //@version
 moveHeader(/^@description[ ]+/gm, /^[/][/] @description[ ]+$/gm, "", "");   //@description
 moveHeader(/^@author[ ]+/gm, /^[/][/] @author[ ]+$/gm, "", "");             //@author
 moveHeader(/^@license[ ]+/gm, /^[/][/] @license[ ]+$/gm, "", "");           //@license
+moveHeader(/^@homepageURL[ ]+/gm, /^[/][/] @homepageURL[ ]+$/gm, "", "");   //@homepageURL
+moveHeader(/^@supportURL[ ]+/gm, /^[/][/] @supportURL[ ]+$/gm, "", "");     //@supportURL
 tContent = tContent.replace("{{content}}", output);
 
 fs.writeFileSync(process.argv[4], tContent);
