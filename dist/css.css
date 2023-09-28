@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           B站仿旧版样式（搜索页(beta)、播放页）（css版）
 @namespace      github.com/czxinc/bilibili-old-style
-@version        2.2.0
+@version        2.2.1
 @homepageURL     https://github.com/czxinc/bilibili-old-style
 @supportURL   https://github.com/czxinc/bilibili-old-style
 @description    B站仿旧版样式，仅播放页，搜索页还在改造中
@@ -571,7 +571,8 @@
   .video-share-popover .video-share-dropdown .dropdown-bottom {
     padding: 20px 10px;
   }
-  .video-desc-container .basic-desc-info {
+  .video-desc-container .basic-desc-info,
+  .video-desc-container .subtitle-maker-list {
     font-size: 12px !important;
     line-height: 18px !important;
   }
