@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         B站仿旧版样式（搜索页(beta)、播放页）（js版）
 // @namespace    github.com/czxinc/bilibili-old-style
-// @version      2.2.1
+// @version      2.3.0
 // @description  B站仿旧版样式，仅播放页，搜索页还在改造中
 // @author       CZX Fuckerman
 // @license      GPL
@@ -1257,6 +1257,92 @@
   .search-header .search-input .search-fixed-header .search-input-wrap:before {
     margin-top: 0px;
   }
+  .search-all-list .user-video-info .video-list-item:nth-last-child(1),
+  .search-all-list .user-video-info .video-list-item:nth-last-child(2),
+  .search-all-list .user-video-info .video-list-item:nth-last-child(3) {
+    display: none;
+  }
+  .search-conditions .vui_button--tab {
+    font-size: 12px;
+    height: 20px;
+    padding: 0px 8px;
+    color: #222;
+    margin: 0px 15px 0px 0px !important;
+  }
+  .search-conditions .vui_button--active {
+    background-color: #00a1d6;
+    color: #fff;
+    border-radius: 4px;
+  }
+  .search-conditions .search-condition-row {
+    margin-bottom: 10px;
+    width: 95%;
+  }
+  .search-conditions .search-condition-row .search-channel-item {
+    margin-top: 0px !important;
+  }
+  .search-conditions .search-condition-row .search-channel-item .vui_button--tab {
+    margin-right: 6px !important;
+  }
+  .search-conditions .search-condition-row .search-channel-item:nth-child(2) .vui_button--tab {
+    margin-left: 6px !important;
+  }
+  .search-conditions .search-condition-row .search-channel-item:nth-last-child(1),
+  .search-conditions .search-condition-row .search-channel-item:nth-last-child(2),
+  .search-conditions .search-condition-row .search-channel-item:nth-last-child(3) {
+    margin-top: 4px !important;
+  }
+  .search-conditions .search-condition-row .search-channel-item .search-sub-wrapper {
+    height: auto;
+    bottom: -45px !important;
+    margin-bottom: 2px;
+    padding-top: 15px !important;
+    transition: none !important;
+  }
+  .search-conditions .search-condition-row .search-channel-item .search-sub-wrapper:before {
+    content: '';
+    background-image: url("//s1.hdslb.com/bfs/static/jinkela/search/assets/sprite-690be8a6ea.png");
+    background-position: -442px -285px;
+    width: 10px;
+    position: absolute;
+    height: 5px;
+    top: 10px;
+    left: calc(50% - 10px);
+  }
+  .search-conditions .search-condition-row .search-channel-item .search-sub-wrapper .search-sub-channel {
+    padding: 0px !important;
+    border-radius: 4px !important;
+    border: 1px solid #e5e9ef !important;
+    background-color: #f4f5f7 !important;
+    box-shadow: none !important;
+  }
+  .search-conditions .search-condition-row .search-channel-item .search-sub-wrapper .search-sub-channel .sub-channel-item {
+    padding: 0px 12px;
+    line-height: 30px;
+    margin-right: 0 !important;
+    font-size: 12px;
+  }
+  .search-conditions .search-condition-row .search-channel-item .search-sub-wrapper .search-sub-channel .sub-channel-item a {
+    color: #000 !important;
+  }
+  .search-conditions .i_button_more {
+    height: auto !important;
+    border-radius: 4px;
+    line-height: 24px;
+    font-size: 12px !important;
+    color: #6d757a;
+    right: 0;
+    display: inline-block;
+    width: 74px;
+    text-align: center;
+    padding: 0px !important;
+    border: 0px;
+    transition: none;
+  }
+  .search-conditions .i_button_more:hover {
+    background-color: #e5e9ef;
+    color: #00a1d6;
+  }
   .video-list.row>div {
     flex: 0 0 20% !important;
     max-width: none !important;
@@ -1348,12 +1434,16 @@
     line-height: 16px !important;
     color: #99a2aa !important;
   }
-  .bili-video-card .bili-video-card__info--bottom svg {
+  .bili-video-card .bili-video-card__info--author-ico {
     width: 15px !important;
     height: 15px !important;
   }
-  .bili-video-card .bili-video-card__info--bottom svg use {
+  .bili-video-card .bili-video-card__info--author-ico use {
     stroke-width: 2px;
+  }
+  .bili-video-card .bili-video-card__info--cheese {
+    width: 24px !important;
+    height: 15px !important;
   }
 `));
         styleNode.setAttribute("bilibili-old-style-fragment", "2");

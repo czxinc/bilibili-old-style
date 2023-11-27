@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           B站仿旧版样式（搜索页(beta)、播放页）（stylus版）
 @namespace      github.com/czxinc/bilibili-old-style
-@version        2.2.1
+@version        2.3.0
 @preprocessor    stylus
 @homepageURL     https://github.com/czxinc/bilibili-old-style
 @supportURL   https://github.com/czxinc/bilibili-old-style
@@ -388,9 +388,9 @@ unitToPx(num)
 		padding-top: 27px!important;
 		box-sizing: border-box!important;
 		.video-title //视频标题
-				font-size: 18px!important;
-				font-weight: 500!important;
-				line-height: 26px!important;
+			font-size: 18px!important;
+			font-weight: 500!important;
+			line-height: 26px!important;
 	
 	
 				
@@ -471,7 +471,7 @@ unitToPx(num)
 		.video-toolbar-right
 			.toolbar-right-note
 				margin-right: 0px!important;
-				 .video-note-inner
+				.video-note-inner
 					/* position: relative; */
 					margin-right: 25px!important;
 					width: 71px;
@@ -1086,9 +1086,9 @@ unitToPx(num)
 	svgSize=15px //图标尺寸（长和宽）
 	/* 容器宽度 start */
 	.i_wrapper
-			padding-left:0px!important;
-			padding-right:0px!important;
-			width:980px!important;	
+		padding-left:0px!important;
+		padding-right:0px!important;
+		width:980px!important;	
 	/* 容器宽度 end */
 
 	div
@@ -1230,6 +1230,85 @@ unitToPx(num)
 				.search-input-wrap:before
 					margin-top: 0px;
 					
+	.search-all-list
+		.user-video-info
+			.video-list-item //UP主视频推荐显示一行
+				&:nth-last-child(1)
+				&:nth-last-child(2)
+				&:nth-last-child(3)
+					display: none;
+					
+	.search-conditions
+		.vui_button
+			&--tab //搜索条件
+				font-size: 12px;
+				height: 20px;
+				padding: 0px 8px;
+				color: #222;
+				margin: 0px 15px 0px 0px!important;
+			&--active
+				background-color: #00a1d6;
+				color: #fff;
+				border-radius: 4px;
+		.search-condition-row		
+			margin-bottom: 10px;
+			width: 95%; //把纪录片选项挤到下一行，旧版纪录片在第二行
+			.search-channel-item //搜索条件 分区 容器
+				margin-top: 0px!important;
+				.vui_button--tab
+					margin-right: 6px!important;
+				&:nth-child(2) .vui_button--tab
+					margin-left: 6px!important;
+				&:nth-last-child(1) //分区第二行边距特殊
+				&:nth-last-child(2)
+				&:nth-last-child(3)
+					margin-top: 4px!important;
+				.search-sub-wrapper
+					height: auto;
+					bottom: -45px!important;
+					margin-bottom: 2px;
+					padding-top: 15px!important;
+					transition: none!important;
+					&:before
+						content: ''
+						background-image: url(//s1.hdslb.com/bfs/static/jinkela/search/assets/sprite-690be8a6ea.png);
+						background-position: -442px -285px;
+						width: 10px;
+						position: absolute;
+						height: 5px;
+						top: 10px;
+						left: calc(50% - 10px);
+					.search-sub-channel
+						padding: 0px!important;
+						border-radius: 4px!important;
+						border: 1px solid #e5e9ef!important;
+						background-color: #f4f5f7!important;
+						box-shadow: none!important;
+						.sub-channel-item
+							padding: 0px 12px;
+							line-height: 30px;
+							margin-right: 0!important;
+							font-size: 12px;
+							a
+								color: #000!important;
+		.i_button_more
+			height: auto!important;
+			border-radius: 4px;
+			line-height: 24px;
+			font-size: 12px!important;
+			color: #6d757a;
+			right: 0;
+			display: inline-block;
+			width: 74px;
+			text-align: center;
+			padding: 0px!important;
+			border: 0px;
+			transition: none;
+			&:hover
+				background-color: #e5e9ef;
+				color: #00a1d6;
+
+				
 					
 					
 	/* 搜索框（其他） start */
@@ -1265,13 +1344,13 @@ unitToPx(num)
 		.bili-video-card__wrap
 			height: 100%
 			display: flex;
-			flex-direction:column;
+			flex-direction: column;
 		.bili-video-card__image--wrap
 			padding-top: 0px!important;
 			.bili-watch-later
 			picture
-				border-radius:inherit!important;
-				object-fit:fill!important;
+				border-radius: inherit!important;
+				object-fit: fill!important;
 		.bili-video-card__stats
 			border-bottom-left-radius: 4px!important;
 			border-bottom-right-radius: 4px!important;
@@ -1286,7 +1365,7 @@ unitToPx(num)
 				font-size: 12px!important;
 				line-height: 16px!important;
 				svg
-					color:#99a2aa!important;
+					color: #99a2aa!important;
 					width: svgSize+1!important;
 					height: svgSize+1!important;
 			&__duration //视频长度
@@ -1304,9 +1383,9 @@ unitToPx(num)
 			margin-top: 0px!important;
 			flex: 1;
 			&--tit //标题
-				lineHeight=20px
-				font-size:12px!important;
-				line-height:lineHeight!important;
+				lineHeight=20px;
+				font-size: 12px!important;
+				line-height: lineHeight!important;
 				color: #222!important;
 				font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif !important;
 				padding-right: 0px!important;
@@ -1321,9 +1400,12 @@ unitToPx(num)
 				font-size:12px!important;
 				line-height: 16px!important;
 				color:#99a2aa!important;
-				svg
-					width: svgSize!important;
-					height: svgSize!important;
-					use
-						stroke-width: 2px; //图片尺寸，但没有作用，需要找其他方法
+			&--author-ico //UP主图标
+				width: svgSize!important;
+				height: svgSize!important;
+				use
+					stroke-width: 2px; //图片尺寸，但没有作用，需要找其他方法
+			&--cheese //课堂图标
+				width: svgSize+9!important;
+				height: svgSize!important;
 	/* 视频项目 end */
