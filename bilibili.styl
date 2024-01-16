@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           B站仿旧版样式（搜索页(beta)、播放页）
 @namespace      github.com/czxinc/bilibili-old-style
-@version        2.3.0
+@version        2.3.1
 @preprocessor    stylus
 @homepageURL     https://github.com/czxinc/bilibili-old-style
 @supportURL   https://github.com/czxinc/bilibili-old-style
@@ -381,6 +381,7 @@ unitToPx(num)
 		
 	/* 左侧项目 start */
 	.left-container
+	.playlist-container--left //适配稍后再看
 		max-width: unitToPx(leftWidth);
 		
 	.video-info-container
@@ -418,7 +419,9 @@ unitToPx(num)
 						width: 5px;
 						height: 8px;
 						
-
+	.video-argue
+		.video-argue-inner //视频争议标签
+			font-size: 12px!important;
 			
 
 
@@ -716,6 +719,8 @@ unitToPx(num)
 				.reply-box-warp
 					.reply-box-textarea
 						padding-top 10px
+					.textarea-wrap
+						padding: 0px;
 	
 	.main-reply-box
 		.box-normal
