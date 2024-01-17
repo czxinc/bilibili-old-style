@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         B站仿旧版样式（搜索页(beta)、播放页）（js版）
 // @namespace    github.com/czxinc/bilibili-old-style
-// @version      2.3.0
+// @version      2.3.1
 // @description  B站仿旧版样式，仅播放页，搜索页还在改造中
 // @author       CZX Fuckerman
 // @license      GPL
@@ -416,7 +416,8 @@
     margin: 0;
     padding: 0;
   }
-  .left-container {
+  .left-container,
+  .playlist-container--left {
     max-width: 1280px;
   }
   .video-info-container {
@@ -454,6 +455,9 @@
   .video-info-detail .video-info-detail-list .honor.honor-rank .honor-arrow {
     width: 5px;
     height: 8px;
+  }
+  .video-argue .video-argue-inner {
+    font-size: 12px !important;
   }
   #bilibili-player:has(.bpx-player-container:not([data-screen = "web"]):not([data-screen = "full"]):not([data-screen = "wide"])) {
     max-width: 1280px;
@@ -734,6 +738,9 @@
   }
   .reply-box.fixed-box .box-normal .reply-box-warp .reply-box-textarea {
     padding-top: 10px;
+  }
+  .reply-box.fixed-box .box-normal .reply-box-warp .textarea-wrap {
+    padding: 0px;
   }
   .main-reply-box .box-normal {
     height: 65px !important;
