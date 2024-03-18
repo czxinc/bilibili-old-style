@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         B站仿旧版样式（搜索页(beta)、播放页）（js版）
 // @namespace    github.com/czxinc/bilibili-old-style
-// @version      2.3.1
+// @version      2.3.2
 // @description  B站仿旧版样式，仅播放页，搜索页还在改造中
 // @author       CZX Fuckerman
 // @license      GPL
@@ -1111,6 +1111,9 @@
     if(location.href.startsWith("https://search.bilibili.com/")){
         let styleNode = document.createElement("style");
         styleNode.appendChild(document.createTextNode(`
+  html {
+    font: 12px Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+  }
   .i_wrapper {
     padding-left: 0px !important;
     padding-right: 0px !important;
@@ -1263,6 +1266,36 @@
   }
   .search-header .search-input .search-fixed-header .search-input-wrap:before {
     margin-top: 0px;
+  }
+  .search-header .search-tabs .vui_tabs--nav {
+    justify-content: space-between;
+  }
+  .search-header .search-tabs .vui_tabs--nav .vui_tabs--nav-item .vui_tabs--nav-text {
+    color: #000;
+  }
+  .search-header .search-tabs .vui_tabs--nav .vui_tabs--nav-item .vui_tabs--nav-num {
+    color: #6d757a;
+    background: none;
+  }
+  .search-header .search-tabs .vui_tabs--nav .vui_tabs--nav-item:first-child .vui_tabs--nav-link {
+    padding-left: 10px !important;
+  }
+  .search-header .search-tabs .vui_tabs--nav-slider {
+    color: #00a1d6;
+    width: 54.25px !important;
+    transition-duration: 200ms;
+    transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition-property: width, height, transform;
+    will-change: transform;
+    pointer-events: none;
+    transform: translate(-10px, 4px);
+    height: 2px;
+    z-index: 1;
+  }
+  .search-header .search-tabs .vui_tabs--navbar:after {
+    border-bottom: 1px solid #ccd0d7;
+    top: 4px;
+    position: relative;
   }
   .search-all-list .user-video-info .video-list-item:nth-last-child(1),
   .search-all-list .user-video-info .video-list-item:nth-last-child(2),
