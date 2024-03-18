@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           B站仿旧版样式（搜索页(beta)、播放页）
 @namespace      github.com/czxinc/bilibili-old-style
-@version        2.3.1
+@version        2.3.2
 @preprocessor    stylus
 @homepageURL     https://github.com/czxinc/bilibili-old-style
 @supportURL   https://github.com/czxinc/bilibili-old-style
@@ -1089,6 +1089,10 @@ unitToPx(num)
 
 @-moz-document url-prefix("https://search.bilibili.com/")
 	svgSize=15px //图标尺寸（长和宽）
+	
+	html
+		font: 12px Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+	
 	/* 容器宽度 start */
 	.i_wrapper
 		padding-left:0px!important;
@@ -1234,6 +1238,33 @@ unitToPx(num)
 			.search-fixed-header //非页头时的浮动搜索框
 				.search-input-wrap:before
 					margin-top: 0px;
+		.search-tabs //搜索类别栏
+			.vui_tabs--nav
+				justify-content: space-between;
+				.vui_tabs--nav-item
+					.vui_tabs--nav-text
+						color: #000;
+					.vui_tabs--nav-num
+						color: rgb(109, 117, 122);
+						background: none;
+					&:first-child
+						.vui_tabs--nav-link
+							padding-left: 10px!important;
+			.vui_tabs--nav-slider //当前选择下方的滑动横线
+				color: rgb(0, 161, 214);
+				width: 54.25px!important;
+				transition-duration: 200ms;
+				transition-timing-function: cubic-bezier(.645,.045,.355,1);
+				transition-property: width, height, transform;
+				will-change: transform;
+				pointer-events: none;
+				transform: translate(-10px, 4px);
+				height: 2px;
+				z-index: 1;
+			.vui_tabs--navbar:after 
+				border-bottom: 1px solid #ccd0d7;
+				top: 4px;
+				position: relative;
 					
 	.search-all-list
 		.user-video-info
