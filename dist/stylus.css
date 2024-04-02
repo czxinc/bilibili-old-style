@@ -1,22 +1,27 @@
 /* ==UserStyle==
 @name           B站仿旧版样式（搜索页(beta)、播放页）（stylus版）
 @namespace      github.com/czxinc/bilibili-old-style
-@version        3.0.0
+@version        3.0.1
 @preprocessor    stylus
 @homepageURL     https://github.com/czxinc/bilibili-old-style
 @supportURL   https://github.com/czxinc/bilibili-old-style
 @description    B站仿旧版样式，仅播放页，搜索页还在改造中
 @author         CZX Fuckerman
 @license      GPL
-@var checkbox topbarVideo "顶栏（视频页）" 1
-@var checkbox topbarSearch "顶栏（搜索页）" 1
-@var checkbox pageVideo "视频页" 1
-@var checkbox pageSearch "搜索页" 1
+
 ==/UserStyle== */
 
+//@var checkbox topbarVideo "顶栏（视频页）" 1
+//@var checkbox topbarSearch "顶栏（搜索页）" 1
+//@var checkbox pageVideo "视频页" 1
+//@var checkbox pageSearch "搜索页" 1
 //@var number leftWidth "左侧宽度" 1280
 
 leftWidth = 1280 //宽度
+topbarVideo = 1
+topbarSearch = 1
+pageVideo = 1
+pageSearch = 1
 
 unitToPx(num)
 	unit(num, 'px')
