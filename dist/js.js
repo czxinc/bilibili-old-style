@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         B站仿旧版样式（搜索页(beta)、播放页、稍后再看播放页）（js版）
+// @name         B站仿旧版样式（搜索页(beta)、播放页）（js版）
 // @namespace    github.com/czxinc/bilibili-old-style
-// @version      4.0.0
-// @description  B站仿旧版样式，仅播放页和稍后再看播放页，搜索页还在改造中
+// @version      4.0.1
+// @description  B站仿旧版样式，仅播放页，搜索页还在改造中
 // @author       CZX Fuckerman
 // @license      GPL
 // @homepageURL  https://github.com/czxinc/bilibili-old-style
@@ -1025,8 +1025,8 @@
   .video-page-special-card-small .card-box .pic-box .framepreview-box .video-awesome-img,
   .video-page-operator-card-small .card-box .pic-box .framepreview-box .video-awesome-img,
   .recommend-video-card .card-box .pic-box .framepreview-box .video-awesome-img {
-    width: 141px;
-    height: 80px;
+    width: 141px !important;
+    height: 80px !important;
   }
   .video-page-card-small .card-box .pic-box .rcmd-cover-img .b-img__inner img,
   .video-page-special-card-small .card-box .pic-box .rcmd-cover-img .b-img__inner img,
@@ -2130,8 +2130,8 @@
   .video-page-special-card-small .card-box .pic-box .framepreview-box .video-awesome-img,
   .video-page-operator-card-small .card-box .pic-box .framepreview-box .video-awesome-img,
   .recommend-video-card .card-box .pic-box .framepreview-box .video-awesome-img {
-    width: 141px;
-    height: 80px;
+    width: 141px !important;
+    height: 80px !important;
   }
   .video-page-card-small .card-box .pic-box .rcmd-cover-img .b-img__inner img,
   .video-page-special-card-small .card-box .pic-box .rcmd-cover-img .b-img__inner img,
