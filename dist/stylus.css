@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           B站仿旧版样式（搜索页(beta)、播放页）（stylus版）
 @namespace      github.com/czxinc/bilibili-old-style
-@version        4.0.1
+@version        4.0.2
 @preprocessor    stylus
 @homepageURL     https://github.com/czxinc/bilibili-old-style
 @supportURL   https://github.com/czxinc/bilibili-old-style
@@ -981,9 +981,9 @@ stylusVideo()
 					border-bottom-right-radius: 2px!important;
 					border-bottom-left-radius: 2px!important;
 				.duration
-					font-size: 12px;
-					line-height: inherit;
-					height: 14px;
+					font-size: 12px!important;
+					line-height: inherit!important;
+					height: 14px!important;
 				.framepreview-box
 					.video-awesome-img
 						width: 141px!important;

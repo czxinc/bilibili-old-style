@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           B站仿旧版样式（搜索页(beta)、播放页）（css版）
 @namespace      github.com/czxinc/bilibili-old-style
-@version        4.0.1
+@version        4.0.2
 @homepageURL     https://github.com/czxinc/bilibili-old-style
 @supportURL   https://github.com/czxinc/bilibili-old-style
 @description    B站仿旧版样式，仅播放页，搜索页还在改造中
@@ -1003,9 +1003,9 @@
   .video-page-special-card-small .card-box .pic-box .duration,
   .video-page-operator-card-small .card-box .pic-box .duration,
   .recommend-video-card .card-box .pic-box .duration {
-    font-size: 12px;
-    line-height: inherit;
-    height: 14px;
+    font-size: 12px !important;
+    line-height: inherit !important;
+    height: 14px !important;
   }
   .video-page-card-small .card-box .pic-box .framepreview-box .video-awesome-img,
   .video-page-special-card-small .card-box .pic-box .framepreview-box .video-awesome-img,
@@ -2103,9 +2103,9 @@
   .video-page-special-card-small .card-box .pic-box .duration,
   .video-page-operator-card-small .card-box .pic-box .duration,
   .recommend-video-card .card-box .pic-box .duration {
-    font-size: 12px;
-    line-height: inherit;
-    height: 14px;
+    font-size: 12px !important;
+    line-height: inherit !important;
+    height: 14px !important;
   }
   .video-page-card-small .card-box .pic-box .framepreview-box .video-awesome-img,
   .video-page-special-card-small .card-box .pic-box .framepreview-box .video-awesome-img,
