@@ -1,11 +1,11 @@
 /* ==UserStyle==
-@name           B站仿旧版样式（搜索页(beta)、播放页）
+@name           B站仿旧版样式（搜索页(beta)、播放页、稍后再看播放页）
 @namespace      github.com/czxinc/bilibili-old-style
-@version        3.0.1
+@version        4.0.0
 @preprocessor    stylus
 @homepageURL     https://github.com/czxinc/bilibili-old-style
 @supportURL   https://github.com/czxinc/bilibili-old-style
-@description    B站仿旧版样式，仅播放页，搜索页还在改造中
+@description    B站仿旧版样式，仅播放页和稍后再看播放页，搜索页还在改造中
 @author         CZX Fuckerman
 @license      GPL
 
@@ -939,6 +939,7 @@ stylusVideo()
 	.video-page-card-small
 	.video-page-special-card-small
 	.video-page-operator-card-small
+	.recommend-video-card //用于“稍后再看”
 		padding: 6px 0!important;
 		margin-bottom: 0px!important;
 		&:first-child
@@ -946,12 +947,32 @@ stylusVideo()
 		.card-box
 			.info
 				font-size: 12px!important;
+				.title
+					display: block!important;
+					font-size: 14px!important;
+					font-weight: 500!important;
+					height: 36px!important;
+					line-height: 18px!important;
+					margin-bottom: 6px!important;
+					word-break: break-word!important;
+					overflow: hidden!important;
+					text-overflow: ellipsis!important;
+					display: box!important;	
 				.upname
+					margin: 0px 0px 4px 0px;
 					height: 16px;
-					a
-						svg
-							display: none;
+					svg
+						display: none;
+				.desc
+					font-size: 12px!important;
 			.pic-box
+				width: 141px!important;
+				height: 80px!important;
+				border-radius: 2px!important;
+				.cover
+					width: 80px!important;
+					height: 80px!important;
+					background: none!important;
 				.pic
 					position: relative!important;
 					border-radius: 2px!important;
@@ -959,53 +980,30 @@ stylusVideo()
 					border-top-right-radius: 2px!important;
 					border-bottom-right-radius: 2px!important;
 					border-bottom-left-radius: 2px!important;
+				.duration
+					font-size: 12px;
+					line-height: inherit;
+					height: 14px;
+				.framepreview-box
+					.video-awesome-img
+						width: 141px;
+						height: 80px;
+				.rcmd-cover-img
+					.b-img__inner
+						img
+							border-radius: 2px!important;  //用于“稍后再看”
 			.playinfo
 				.play
 				.dm
+				.play-icon //用于“稍后再看”
+				.dm-icon //用于“稍后再看”
 					/* display: none; */
 					height: 14px!important;
 					width: 14px!important;
 					position: relative;
 					top: -1px;
-
-	.is-in-large-ab
-		.video-page-card-small
-		.video-page-special-card-small
-		.video-page-operator-card-small
-			.card-box
-				.info
-					.upname
-						margin: 0px 0px 4px 0px;
-					.title
-						display: block!important;
-						font-size: 14px!important;
-						font-weight: 500!important;
-						height: 36px!important;
-						line-height: 18px!important;
-						margin-bottom: 6px!important;
-						word-break: break-word!important;
-						overflow: hidden!important;
-						text-overflow: ellipsis!important;
-						display: box!important;	
-					.desc
-						font-size: 12px!important;
-				.pic-box
-					width: 141px!important;
-					height: 80px!important;
-					border-radius: 2px!important;
-					.framepreview-box
-						.video-awesome-img
-							width: 141px;
-							height: 80px;
-					.pic
-						.duration
-							font-size: 12px;
-							line-height: inherit;
-							height: 14px;
-					.cover
-						width: 80px!important;
-						height: 80px!important;
-						background: none!important;
+				
+				
 
 	/* 右侧项目（视频） end */
 
@@ -1454,13 +1452,34 @@ stylusSearch()
 	/* 视频项目 end */
 
 @-moz-document url-prefix("https://www.bilibili.com/video/")
+	//视频播放页
 	if topbarVideo == 1
 		stylusTopbar()
 	if pageVideo == 1
 		stylusVideo()
 		
+@-moz-document url-prefix("https://www.bilibili.com/list/watchlater")
+	//稍后再看 视频播放页
+	if topbarSearch == 1
+		stylusTopbar()
+	if pageVideo == 1
+		stylusVideo()
+		
 @-moz-document url-prefix("https://search.bilibili.com/")
+	//搜索页
 	if topbarSearch == 1
 		stylusTopbar()
 	if pageSearch == 1
 		stylusSearch()
+	
+@-moz-document url-prefix("https://space.bilibili.com/")
+	//个人空间
+	stylusTopbar()
+
+@-moz-document url-prefix("https://www.bilibili.com/bangumi/play/ss")
+	//番剧、综艺播放页
+	stylusTopbar()
+	
+@-moz-document url-prefix("https://www.bilibili.com/bangumi/play/ep")
+	//电影、电视剧播放页
+	stylusTopbar()
