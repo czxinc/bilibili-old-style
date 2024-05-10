@@ -1,7 +1,7 @@
 /* ==UserStyle==
-@name           B站仿旧版样式（搜索页(beta)、播放页、稍后再看播放页）（css版）
+@name           B站仿旧版样式（搜索页(beta)、播放页、稍后再看播放页）（js版）（css版）
 @namespace      github.com/czxinc/bilibili-old-style
-@version        4.1.2
+@version        5.0.0
 @homepageURL     https://github.com/czxinc/bilibili-old-style
 @supportURL   https://github.com/czxinc/bilibili-old-style
 @description    B站仿旧版样式，仅播放页和稍后再看播放页，搜索页还在改造中
@@ -1109,7 +1109,7 @@
     border-radius: 2px !important;
   }
 }
-@-moz-document url-prefix("https://www.bilibili.com/list/watchlater") {
+@-moz-document url-prefix("https://www.bilibili.com/list") {
   #biliMainHeader {
     height: 56px !important;
   }

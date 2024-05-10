@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         B站仿旧版样式（搜索页(beta)、播放页、稍后再看播放页）（js版）
+// @name         B站仿旧版样式（搜索页(beta)、播放页、稍后再看播放页）（js版）（js版）
 // @namespace    github.com/czxinc/bilibili-old-style
-// @version      4.1.2
+// @version      5.0.0
 // @description  B站仿旧版样式，仅播放页和稍后再看播放页，搜索页还在改造中
 // @author       CZX Fuckerman
 // @license      GPL
@@ -1126,7 +1126,7 @@
         styleNode.setAttribute("bilibili-old-style-fragment", "0");
         document.documentElement.appendChild(styleNode);
     }
-    if(location.href.startsWith("https://www.bilibili.com/list/watchlater")){
+    if(location.href.startsWith("https://www.bilibili.com/list")){
         let styleNode = document.createElement("style");
         styleNode.appendChild(document.createTextNode(`
   #biliMainHeader {
