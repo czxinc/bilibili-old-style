@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           B站仿旧版样式（搜索页(beta)、播放页、稍后再看播放页）
 @namespace      github.com/czxinc/bilibili-old-style
-@version        6.0.0
+@version        7.0.0
 @preprocessor    stylus
 @homepageURL     https://github.com/czxinc/bilibili-old-style
 @supportURL   https://github.com/czxinc/bilibili-old-style
@@ -1501,4 +1501,8 @@ stylusSearch()
 	
 @-moz-document url-prefix("https://t.bilibili.com/")
 	//动态首页
+	stylusTopbar()
+	
+@-moz-document url-prefix("https://www.bilibili.com/read/")
+	//专栏
 	stylusTopbar()
