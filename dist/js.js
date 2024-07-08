@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         B站仿旧版样式（搜索页(beta)、播放页、稍后再看播放页）（js版）
 // @namespace    github.com/czxinc/bilibili-old-style
-// @version      6.0.0
+// @version      7.0.0
 // @description  B站仿旧版样式，仅播放页和稍后再看播放页，搜索页还在改造中
 // @author       CZX Fuckerman
 // @license      GPL
@@ -4461,6 +4461,374 @@
   }
 `));
         styleNode.setAttribute("bilibili-old-style-fragment", "6");
+        document.documentElement.appendChild(styleNode);
+    }
+    if(location.href.startsWith("https://www.bilibili.com/read/")){
+        let styleNode = document.createElement("style");
+        styleNode.appendChild(document.createTextNode(`
+  #biliMainHeader {
+    height: 56px !important;
+  }
+  .bili-header {
+    height: 56px !important;
+  }
+  .bili-header .bili-header__bar {
+    padding: 10px 24px;
+    height: 56px;
+  }
+  .bili-header .left-entry .default-entry,
+  .bili-header .left-entry .loc-entry {
+    margin-right: 12px !important;
+  }
+  .bili-header .left-entry__title .mini-header__logo {
+    width: 70px;
+    height: 32px;
+  }
+  .bili-header .left-entry__title .mini-header__logo path {
+    fill: #00a1d6;
+  }
+  .bili-header .right-entry .right-entry__outside .right-entry-icon {
+    display: none;
+  }
+  .bili-header .right-entry .right-entry__outside .right-entry-text {
+    color: #212121;
+    text-shadow: none;
+    line-height: 30px;
+    display: block !important;
+  }
+  .bili-header .right-entry .right-entry-item {
+    min-width: 0px;
+    margin-right: 0px;
+  }
+  .bili-header .right-entry .right-entry-item--upload .v-popover-wrap {
+    margin-left: 0px;
+  }
+  .bili-header .right-entry .right-entry--vip .red-point {
+    right: -8px;
+  }
+  .bili-header .right-entry__outside {
+    -webkit-font-smoothing: antialiased;
+    font: 14px -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif;
+    min-width: 0px;
+    margin: 0px 0px 0px 12px !important;
+  }
+  .bili-header .right-entry__outside.go-login-btn {
+    width: 64px;
+  }
+  .bili-header .red-num--message {
+    background-color: #fa5a57;
+    text-align: center;
+    color: #fff;
+    min-width: 16px;
+    height: 16px;
+    padding: 0 3px;
+    border-radius: 8px;
+    line-height: 16px;
+    font-size: 12px;
+    top: -7px;
+    right: -10px;
+    left: auto;
+  }
+  .bili-header .red-num--dynamic {
+    left: auto;
+    right: -10px;
+  }
+  .bili-header .v-popover-wrap.right-entry__outside.right-entry--message {
+    margin: 0px 0px 0px 0px !important;
+  }
+  .bili-header .v-popover-wrap .header-favorite-container {
+    height: 100%;
+    min-width: 0px;
+  }
+  .bili-header .v-popover-wrap .header-favorite-container .header-favorite-container-box {
+    margin-top: 0px;
+  }
+  .bili-header .v-popover-wrap .header-favorite-container .header-favorite-container-box .header-favorite-container__up {
+    top: 0px !important;
+  }
+  .bili-header .v-popover-wrap .header-favorite-container .header-favorite-container-box .header-favorite-container__down {
+    display: none;
+  }
+  .bili-header .header-entry-mini {
+    width: 40px;
+    height: 40px;
+    left: 0px;
+    top: 0px;
+  }
+  .bili-header .header-entry-mini .v-img >img {
+    border: 0px;
+  }
+  .bili-header .header-avatar-wrap {
+    width: 50px;
+    height: 40px;
+    margin-left: 12px;
+    padding-right: 0px;
+  }
+  .bili-header .header-upload-entry {
+    cursor: pointer;
+    position: relative;
+    color: #fff;
+    font-size: 14px;
+    display: block;
+    width: 100px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    background: #fb7299;
+    border-radius: 2px;
+    margin-left: 14px;
+  }
+  .bili-header .header-upload-entry .header-upload-entry__text {
+    display: block !important;
+  }
+  .bili-header .header-upload-entry .header-upload-entry__icon {
+    display: none;
+  }
+  .bili-header .center-search-container .center-search__bar.is-focus {
+    box-shadow: none;
+    border-radius: 0px;
+  }
+  .bili-header .center-search-container .center-search__bar #nav-searchform {
+    display: block;
+    padding: 0 48px 0 16px;
+    border-radius: 2px !important;
+    background: #f4f4f4;
+    border: 1px solid #e7e7e7;
+    position: inherit;
+    height: inherit;
+    background: var(--bg3) !important;
+  }
+  .bili-header .center-search-container .center-search__bar .nav-search-content {
+    padding: 0px;
+    background: inherit !important;
+  }
+  .bili-header .center-search-container .center-search__bar .nav-search-content .nav-search-input {
+    word-break: break-all;
+    overflow: hidden;
+    width: 100%;
+    height: 34px;
+    border: none;
+    background-color: transparent;
+    box-shadow: none;
+    color: #999;
+    font-size: 14px;
+    line-height: 34px;
+    transition: all 0.2s;
+  }
+  .bili-header .center-search-container .center-search__bar .nav-search-content .nav-search-input:focus {
+    background-color: inherit;
+    color: #999;
+  }
+  .bili-header .center-search-container .center-search__bar .is-actived .nav-search-content .nav-search-input:focus {
+    color: #222;
+  }
+  .bili-header .center-search-container .center-search__bar .nav-search-btn {
+    position: absolute;
+    top: 0px;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    width: 48px;
+    height: 36px;
+    border: none;
+    border-radius: 2px;
+    background: #e7e7e7;
+    line-height: 26px;
+    cursor: pointer;
+    display: inherit;
+    transition: none;
+  }
+  .bili-header .center-search-container .center-search__bar .nav-search-btn svg {
+    position: absolute;
+    top: 7px;
+    right: 16px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    color: #505050;
+    font-size: 16px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .bili-header .search-panel {
+    background: #fff;
+    border: 1px solid #e6e9ee;
+    box-sizing: border-box;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
+    border-radius: 2px;
+    padding: 16px 0;
+    margin-top: 2px;
+    font-family: PingFang SC, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    color: #212121;
+    -webkit-font-smoothing: antialiased;
+  }
+  .bili-header .message-entry-popover {
+    min-width: 173px;
+  }
+  .bili-header .message-entry-popover .message-inner-list {
+    padding: 10.058px 0;
+    color: #212121;
+  }
+  .bili-header .message-entry-popover .message-inner-list__item {
+    padding: 0px 0px 0px 20.116px;
+    line-height: 36.2093px;
+    font-size: 14px;
+    color: inherit;
+  }
+  .bili-header .header-dynamic-avatar {
+    width: 34.1px !important;
+    height: 34.1px !important;
+    border: 0px !important;
+  }
+  .bili-header .header-dynamic-list-item {
+    transition: 0.3s !important;
+  }
+  .bili-header .header-dynamic-list-item:hover {
+    background-color: #f4f4f4 !important;
+  }
+  .bili-header .header-dynamic-list-item .header-dynamic__box--right {
+    top: 0px !important;
+    width: auto !important;
+  }
+  .bili-header .header-dynamic-list-item .dynamic-info-content {
+    font-size: 13.267px !important;
+    font-weight: 500 !important;
+    color: #212121 !important;
+    margin: 5.68px 0px !important;
+    line-height: normal !important;
+  }
+  .bili-header .header-dynamic-list-item .dynamic-name-line,
+  .publish-time {
+    font-size: 12px !important;
+    color: #505050 !important;
+  }
+  .wnd_bottom {
+    height: 60.64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 18.95px;
+  }
+  .wnd_bottom .r-l {
+    height: 30.313px;
+    width: auto;
+    margin: 0px;
+    border-radius: 0px;
+    color: #212121;
+    font-size: 13.267px;
+    background-color: #f4f4f4;
+    line-height: normal;
+    transition: box-shadow 0.1s;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: auto;
+  }
+  .wnd_bottom .r-l:hover {
+    background-color: #e7e7e7;
+  }
+  .right-entry .v-popover-wrap.right-entry-message {
+    margin-left: 12px !important;
+  }
+  .v-popover-content {
+    border-radius: 2px;
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2);
+  }
+  .dynamic-panel-popover {
+    width: 350.63px;
+  }
+  .dynamic-panel-popover .header-tabs-panel {
+    font-size: 12px;
+    color: #999;
+    line-height: 15.1px;
+    height: 45.5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 19px;
+    border-bottom: 1px solid #e7e7e7;
+    user-select: none;
+    justify-content: normal;
+  }
+  .dynamic-panel-popover .header-tabs-panel__content {
+    min-height: 113.717px;
+    max-height: 444.445px;
+  }
+  .dynamic-panel-popover .header-tabs-panel__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 22.743px 0px 0px;
+    padding: 0px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    z-index: 1;
+    flex: inherit;
+    font-size: 12px;
+    line-height: 15px;
+    border-bottom: none;
+  }
+  .dynamic-panel-popover .header-tabs-panel__item--active {
+    background-color: #00a1d6;
+    color: #fff;
+    padding: 3.79px 9.5px;
+    margin: 0px 13.267px 0px 0px;
+    border-bottom: none;
+  }
+  .dynamic-panel-popover .cover {
+    width: 60.641px !important;
+    height: 34.109px !important;
+    border-radius: 1.895px !important;
+  }
+  .dynamic-article .tip-box {
+    color: #999 !important;
+    font-size: 13.267px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    height: 94.75px !important;
+  }
+  .dynamic-video-item {
+    line-height: normal !important;
+  }
+  .v-popover.is-bottom {
+    padding-top: 13px !important;
+  }
+  .v-popover.is-bottom::before {
+    content: '';
+    width: 10px;
+    height: 7px;
+    display: block;
+    position: absolute;
+    top: 11px;
+    left: calc(50% - 5px) !important;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    background-color: #fff;
+    -webkit-box-shadow: -1px -1px 1px rgba(0,0,0,0.05);
+    box-shadow: -1px -1px 1px rgba(0,0,0,0.05);
+    z-index: 1;
+  }
+  .watch-later {
+    width: 20.844px !important;
+    height: 20.844px !important;
+  }
+  .watch-later .bili-watch-later__icon {
+    width: 15px !important;
+    height: 15px !important;
+  }
+  .bili-avatar-right-icon {
+    width: 15.1px;
+    height: 15.1px;
+  }
+`));
+        styleNode.setAttribute("bilibili-old-style-fragment", "7");
         document.documentElement.appendChild(styleNode);
     }
     
