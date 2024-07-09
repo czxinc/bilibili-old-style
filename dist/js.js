@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         B站仿旧版样式（搜索页(beta)、播放页、稍后再看播放页）（js版）
 // @namespace    github.com/czxinc/bilibili-old-style
-// @version      7.0.0
+// @version      7.0.1
 // @description  B站仿旧版样式，仅播放页和稍后再看播放页，搜索页还在改造中
 // @author       CZX Fuckerman
 // @license      GPL
@@ -344,6 +344,14 @@
     height: 34.109px !important;
     border-radius: 1.895px !important;
   }
+  .dynamic-panel-popover .watch-later {
+    width: 20.844px !important;
+    height: 20.844px !important;
+  }
+  .dynamic-panel-popover .watch-later .bili-watch-later__icon {
+    width: 15px !important;
+    height: 15px !important;
+  }
   .dynamic-article .tip-box {
     color: #999 !important;
     font-size: 13.267px !important;
@@ -372,14 +380,6 @@
     -webkit-box-shadow: -1px -1px 1px rgba(0,0,0,0.05);
     box-shadow: -1px -1px 1px rgba(0,0,0,0.05);
     z-index: 1;
-  }
-  .watch-later {
-    width: 20.844px !important;
-    height: 20.844px !important;
-  }
-  .watch-later .bili-watch-later__icon {
-    width: 15px !important;
-    height: 15px !important;
   }
   .bili-avatar-right-icon {
     width: 15.1px;
@@ -1449,6 +1449,14 @@
     height: 34.109px !important;
     border-radius: 1.895px !important;
   }
+  .dynamic-panel-popover .watch-later {
+    width: 20.844px !important;
+    height: 20.844px !important;
+  }
+  .dynamic-panel-popover .watch-later .bili-watch-later__icon {
+    width: 15px !important;
+    height: 15px !important;
+  }
   .dynamic-article .tip-box {
     color: #999 !important;
     font-size: 13.267px !important;
@@ -1477,14 +1485,6 @@
     -webkit-box-shadow: -1px -1px 1px rgba(0,0,0,0.05);
     box-shadow: -1px -1px 1px rgba(0,0,0,0.05);
     z-index: 1;
-  }
-  .watch-later {
-    width: 20.844px !important;
-    height: 20.844px !important;
-  }
-  .watch-later .bili-watch-later__icon {
-    width: 15px !important;
-    height: 15px !important;
   }
   .bili-avatar-right-icon {
     width: 15.1px;
@@ -2554,6 +2554,14 @@
     height: 34.109px !important;
     border-radius: 1.895px !important;
   }
+  .dynamic-panel-popover .watch-later {
+    width: 20.844px !important;
+    height: 20.844px !important;
+  }
+  .dynamic-panel-popover .watch-later .bili-watch-later__icon {
+    width: 15px !important;
+    height: 15px !important;
+  }
   .dynamic-article .tip-box {
     color: #999 !important;
     font-size: 13.267px !important;
@@ -2582,14 +2590,6 @@
     -webkit-box-shadow: -1px -1px 1px rgba(0,0,0,0.05);
     box-shadow: -1px -1px 1px rgba(0,0,0,0.05);
     z-index: 1;
-  }
-  .watch-later {
-    width: 20.844px !important;
-    height: 20.844px !important;
-  }
-  .watch-later .bili-watch-later__icon {
-    width: 15px !important;
-    height: 15px !important;
   }
   .bili-avatar-right-icon {
     width: 15.1px;
@@ -3314,6 +3314,14 @@
     height: 34.109px !important;
     border-radius: 1.895px !important;
   }
+  .dynamic-panel-popover .watch-later {
+    width: 20.844px !important;
+    height: 20.844px !important;
+  }
+  .dynamic-panel-popover .watch-later .bili-watch-later__icon {
+    width: 15px !important;
+    height: 15px !important;
+  }
   .dynamic-article .tip-box {
     color: #999 !important;
     font-size: 13.267px !important;
@@ -3342,14 +3350,6 @@
     -webkit-box-shadow: -1px -1px 1px rgba(0,0,0,0.05);
     box-shadow: -1px -1px 1px rgba(0,0,0,0.05);
     z-index: 1;
-  }
-  .watch-later {
-    width: 20.844px !important;
-    height: 20.844px !important;
-  }
-  .watch-later .bili-watch-later__icon {
-    width: 15px !important;
-    height: 15px !important;
   }
   .bili-avatar-right-icon {
     width: 15.1px;
@@ -3682,6 +3682,14 @@
     height: 34.109px !important;
     border-radius: 1.895px !important;
   }
+  .dynamic-panel-popover .watch-later {
+    width: 20.844px !important;
+    height: 20.844px !important;
+  }
+  .dynamic-panel-popover .watch-later .bili-watch-later__icon {
+    width: 15px !important;
+    height: 15px !important;
+  }
   .dynamic-article .tip-box {
     color: #999 !important;
     font-size: 13.267px !important;
@@ -3710,14 +3718,6 @@
     -webkit-box-shadow: -1px -1px 1px rgba(0,0,0,0.05);
     box-shadow: -1px -1px 1px rgba(0,0,0,0.05);
     z-index: 1;
-  }
-  .watch-later {
-    width: 20.844px !important;
-    height: 20.844px !important;
-  }
-  .watch-later .bili-watch-later__icon {
-    width: 15px !important;
-    height: 15px !important;
   }
   .bili-avatar-right-icon {
     width: 15.1px;
@@ -4050,6 +4050,14 @@
     height: 34.109px !important;
     border-radius: 1.895px !important;
   }
+  .dynamic-panel-popover .watch-later {
+    width: 20.844px !important;
+    height: 20.844px !important;
+  }
+  .dynamic-panel-popover .watch-later .bili-watch-later__icon {
+    width: 15px !important;
+    height: 15px !important;
+  }
   .dynamic-article .tip-box {
     color: #999 !important;
     font-size: 13.267px !important;
@@ -4078,14 +4086,6 @@
     -webkit-box-shadow: -1px -1px 1px rgba(0,0,0,0.05);
     box-shadow: -1px -1px 1px rgba(0,0,0,0.05);
     z-index: 1;
-  }
-  .watch-later {
-    width: 20.844px !important;
-    height: 20.844px !important;
-  }
-  .watch-later .bili-watch-later__icon {
-    width: 15px !important;
-    height: 15px !important;
   }
   .bili-avatar-right-icon {
     width: 15.1px;
@@ -4418,6 +4418,14 @@
     height: 34.109px !important;
     border-radius: 1.895px !important;
   }
+  .dynamic-panel-popover .watch-later {
+    width: 20.844px !important;
+    height: 20.844px !important;
+  }
+  .dynamic-panel-popover .watch-later .bili-watch-later__icon {
+    width: 15px !important;
+    height: 15px !important;
+  }
   .dynamic-article .tip-box {
     color: #999 !important;
     font-size: 13.267px !important;
@@ -4446,14 +4454,6 @@
     -webkit-box-shadow: -1px -1px 1px rgba(0,0,0,0.05);
     box-shadow: -1px -1px 1px rgba(0,0,0,0.05);
     z-index: 1;
-  }
-  .watch-later {
-    width: 20.844px !important;
-    height: 20.844px !important;
-  }
-  .watch-later .bili-watch-later__icon {
-    width: 15px !important;
-    height: 15px !important;
   }
   .bili-avatar-right-icon {
     width: 15.1px;
@@ -4786,6 +4786,14 @@
     height: 34.109px !important;
     border-radius: 1.895px !important;
   }
+  .dynamic-panel-popover .watch-later {
+    width: 20.844px !important;
+    height: 20.844px !important;
+  }
+  .dynamic-panel-popover .watch-later .bili-watch-later__icon {
+    width: 15px !important;
+    height: 15px !important;
+  }
   .dynamic-article .tip-box {
     color: #999 !important;
     font-size: 13.267px !important;
@@ -4814,14 +4822,6 @@
     -webkit-box-shadow: -1px -1px 1px rgba(0,0,0,0.05);
     box-shadow: -1px -1px 1px rgba(0,0,0,0.05);
     z-index: 1;
-  }
-  .watch-later {
-    width: 20.844px !important;
-    height: 20.844px !important;
-  }
-  .watch-later .bili-watch-later__icon {
-    width: 15px !important;
-    height: 15px !important;
   }
   .bili-avatar-right-icon {
     width: 15.1px;
