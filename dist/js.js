@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         B站仿旧版样式（搜索页(beta)、播放页、稍后再看播放页）（js版）
 // @namespace    github.com/czxinc/bilibili-old-style
-// @version      7.0.1
+// @version      7.0.2
 // @description  B站仿旧版样式，仅播放页和稍后再看播放页，搜索页还在改造中
 // @author       CZX Fuckerman
 // @license      GPL
@@ -496,7 +496,7 @@
   .video-toolbar-container .video-toolbar-right .toolbar-right-note .video-note-inner {
 /* position: relative; */
     margin-right: 25px !important;
-    width: 71px;
+    width: auto;
     height: 24px;
     align-items: center;
     justify-content: center;
@@ -508,10 +508,14 @@
     color: #00a1d6;
     background: #fff;
     transition: 0.3s;
+    padding-left: 3px;
   }
   .video-toolbar-container .video-toolbar-right .toolbar-right-note .video-note-inner:hover {
     color: #fff !important;
     background: #00a1d6 !important;
+  }
+  .video-toolbar-container .video-toolbar-right .toolbar-right-note .video-note-inner:hover .video-toolbar-item-icon {
+    fill: #fff !important;
   }
   .video-toolbar-left-item {
     width: 92px !important;
@@ -534,6 +538,8 @@
   }
   .toolbar-right-note .video-toolbar-item-text {
     transition: 0.3s;
+    width: auto;
+    padding-right: 3px;
   }
   .toolbar-right-note .video-toolbar-item-text:hover .video-toolbar-item-icon {
     fill: #fff !important;
@@ -1601,7 +1607,7 @@
   .video-toolbar-container .video-toolbar-right .toolbar-right-note .video-note-inner {
 /* position: relative; */
     margin-right: 25px !important;
-    width: 71px;
+    width: auto;
     height: 24px;
     align-items: center;
     justify-content: center;
@@ -1613,10 +1619,14 @@
     color: #00a1d6;
     background: #fff;
     transition: 0.3s;
+    padding-left: 3px;
   }
   .video-toolbar-container .video-toolbar-right .toolbar-right-note .video-note-inner:hover {
     color: #fff !important;
     background: #00a1d6 !important;
+  }
+  .video-toolbar-container .video-toolbar-right .toolbar-right-note .video-note-inner:hover .video-toolbar-item-icon {
+    fill: #fff !important;
   }
   .video-toolbar-left-item {
     width: 92px !important;
@@ -1639,6 +1649,8 @@
   }
   .toolbar-right-note .video-toolbar-item-text {
     transition: 0.3s;
+    width: auto;
+    padding-right: 3px;
   }
   .toolbar-right-note .video-toolbar-item-text:hover .video-toolbar-item-icon {
     fill: #fff !important;
