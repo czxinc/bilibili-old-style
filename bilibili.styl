@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           B站仿旧版样式（搜索页(beta)、播放页、稍后再看播放页）
 @namespace      github.com/czxinc/bilibili-old-style
-@version        7.0.2
+@version        8.0.0
 @preprocessor    stylus
 @homepageURL     https://github.com/czxinc/bilibili-old-style
 @supportURL   https://github.com/czxinc/bilibili-old-style
@@ -26,6 +26,220 @@ pageSearch = 1
 unitToPx(num)
 	unit(num, 'px')
 
+//评论组件
+stylusAreaComment()
+	/* 评论 start */
+	.bili-comment.browser-pc
+		*
+			font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+			a
+				outline: none;
+				color: #00a1d6;
+				text-decoration: none;
+				cursor: pointer;
+				&:hover
+					color: #f25d8e;
+
+	.reply-header
+		.reply-navigation
+			.nav-bar
+				.nav-title
+					font-size: 18px!important;
+					line-height: 24px!important;
+					font-weight: normal!important;
+					.nav-title-text
+						font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif!important;
+					.total-reply
+						color: inherit!important;
+						font-size: 18px!important;
+						font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif!important;
+				.nav-sort
+					font-size: 14px!important;
+					color: #222!important;
+					.hot-sort
+					.time-sort
+						font-weight: bold!important;
+					&.hot .hot-sort
+					&.time .time-sort
+						color: #00a1d6!important;
+
+	.emoji-panel
+		margin-top: 7px;
+		margin-bottom: 10px;
+		box-shadow: 0 11px 12px 0 rgba(106 115 133 30%);
+		top: 27px;
+		.emoji-content
+			height: 196px!important;
+
+	.reply-list
+		.login-prompt //登录评论按钮
+			border-radius: 4px!important;
+
+	.reply-box
+		.box-normal
+			.reply-box-send
+				background-color: #00a1d6;
+				border: 1px solid #00a1d6;
+				transition: 0.1s;
+				&:hover
+					background-color: #00b5e5;
+					border-color: #00b5e5;
+				&:after
+					content: none!important;
+			.reply-box-warp
+				.reply-box-textarea
+					font-size: 12px;
+					line-height: normal!important;
+					&:hover
+						border-color: #00a1d6!important;
+						background-color: #fff!important;
+		&.disabled
+			.box-normal
+				.reply-box-send
+					background-color: #e5e9ef !important;
+					border-color: #e5e9ef !important;
+					color: #b8c0cc !important;
+		&.fixed-box
+			.box-normal
+				.reply-box-warp
+					.reply-box-textarea
+						padding-top 10px
+					.textarea-wrap
+						padding: 0px;
+
+	.main-reply-box
+		.box-normal
+			height: 65px!important;
+			.reply-box-send
+				width: 70px!important;
+				height: 64px!important;
+			.reply-box-wrap
+				.reply-box-textarea
+					height: 65px!important;
+
+	.reply-item
+		.root-reply-container
+			padding-left: 85px!important;
+			padding-top: 24px!important;
+			.root-reply-avatar
+				width: 82px!important;
+				padding-top: 6px!important;
+			.content-warp
+				.user-info
+					font-size: 12px!important;
+					font-weight: bold!important;
+					line-height: 18px!important;
+					word-wrap: break-word!important;
+					height:22px!important;
+					.user-name
+						font-family: inherit!important;
+						font-weight: inherit!important;
+					.user-level
+						margin-left: 11px!important;
+
+				.root-reply
+					font-size: 14px!important;
+					line-height: 20px!important;
+					.reply-info
+						font-size: 12px!important;
+						margin-top: 6px!important;
+						.reply-time
+							margin-right: 20px!important;
+						.reply-dislike
+							margin-right: 15px!important;
+						.reply-btn
+							padding: 0 5px;
+							border-radius: 4px;
+							margin-right: 15px;
+							cursor: pointer;
+							&:hover
+								color: #00a1d6!important;
+								background: #e5e9ef!important;
+		.sub-reply-container
+			padding-left: 78px!important;
+		&.login-limit-reply-end
+			.login-limit-mask //未登录遮罩
+				display: none!important;
+
+	.sub-reply-item
+		font-size: 14px!important
+		line-height 20px!important
+		.sub-user-info
+			.sub-user-name
+				font-size: 12px!important;
+				font-weight: bold!important;
+				line-height: 18px!important;
+				word-wrap: break-word!important;
+				font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif!important;
+			.sub-user-level
+				margin-left: 11px;
+		.sub-reply-info
+			line-height: 14px!important;
+			margin-top: 6px!important;
+			font-size: 12px!important;
+
+	.sub-reply-list
+		.view-more
+			font-size: 12px!important;
+			color: #6d757a!important;
+			font-weight: bolder!important;
+			.view-more-default
+				.view-more-btn
+					color: #00a1d6;
+					padding: 2px 3px;
+					border-radius: 4px;
+					&:hover
+						background: #e5e9ef;
+						color: #00a1d6;
+			.view-more-pagination
+				span
+					transition: color .3s;
+					line-height: 26px
+
+	.reply-content-container
+		.reply-content
+			line-height: inherit;
+			font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,Helvetica,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,sans-serif;
+		.jump-link
+		.icon 
+			line-height inherit!important
+		.icon
+			&.search-word
+				position: relative;
+				top: -1px;
+
+
+	.reply-operation
+		.operation-list
+			padding: 10px 0!important;
+	/* 评论 end */
+
+//评论区（ShadowDOM组件版）
+stylusAreaCommentShadowDOMVer()
+	/* 评论 start */
+	bili-comments
+		--bili-comments-font-size-content: 14px;
+		--bili-comments-line-height-content: 20px;
+		--bili-rich-text-font-size: 14px;
+		--bili-rich-text-line-height: 20px;
+		--bili-font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+		-webkit-font-smoothing: auto;
+	:host(bili-comment-action-buttons-renderer) //评论功能区
+		font-size: 12px;
+		font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+		-webkit-font-smoothing: auto;
+	:host(bili-comment-renderer) //评论
+		-webkit-font-smoothing: auto;
+		font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+	#user-name[data-user-profile-id] //评论人
+		font-size: 12px;
+		font-weight: 700;
+	div#reply>button //回复数
+	div>button>span#count //赞数
+		font-size: 12px;
+	/* 评论 end */
+
+//顶部栏
 stylusTopbar()
 	/* header start */
 	#biliMainHeader
@@ -359,6 +573,7 @@ stylusTopbar()
 		height: 15.1px;
 	/* header end */
 
+//页面 视频播放页
 stylusVideo()
 	body
 		margin: 0
@@ -655,191 +870,7 @@ stylusVideo()
 				padding-left: 13px!important;
 	/* 评论上面的广播公告栏 end */
 
-	/* 评论 start */
-	.bili-comment.browser-pc
-		*
-			font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
-			a
-				outline: none;
-				color: #00a1d6;
-				text-decoration: none;
-				cursor: pointer;
-				&:hover
-					color: #f25d8e;
-
-	.reply-header
-		.reply-navigation
-			.nav-bar
-				.nav-title
-					font-size: 18px!important;
-					line-height: 24px!important;
-					font-weight: normal!important;
-					.nav-title-text
-						font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif!important;
-					.total-reply
-						color: inherit!important;
-						font-size: 18px!important;
-						font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif!important;
-				.nav-sort
-					font-size: 14px!important;
-					color: #222!important;
-					.hot-sort
-					.time-sort
-						font-weight: bold!important;
-					&.hot .hot-sort
-					&.time .time-sort
-						color: #00a1d6!important;
-
-	.emoji-panel
-		margin-top: 7px;
-		margin-bottom: 10px;
-		box-shadow: 0 11px 12px 0 rgba(106 115 133 30%);
-		top: 27px;
-		.emoji-content
-			height: 196px!important;
-
-	.reply-list
-		.login-prompt //登录评论按钮
-			border-radius: 4px!important;
-
-	.reply-box
-		.box-normal
-			.reply-box-send
-				background-color: #00a1d6;
-				border: 1px solid #00a1d6;
-				transition: 0.1s;
-				&:hover
-					background-color: #00b5e5;
-					border-color: #00b5e5;
-				&:after
-					content: none!important;
-			.reply-box-warp
-				.reply-box-textarea
-					font-size: 12px;
-					line-height: normal!important;
-					&:hover
-						border-color: #00a1d6!important;
-						background-color: #fff!important;
-		&.disabled
-			.box-normal
-				.reply-box-send
-					background-color: #e5e9ef !important;
-					border-color: #e5e9ef !important;
-					color: #b8c0cc !important;
-		&.fixed-box
-			.box-normal
-				.reply-box-warp
-					.reply-box-textarea
-						padding-top 10px
-					.textarea-wrap
-						padding: 0px;
-
-	.main-reply-box
-		.box-normal
-			height: 65px!important;
-			.reply-box-send
-				width: 70px!important;
-				height: 64px!important;
-			.reply-box-wrap
-				.reply-box-textarea
-					height: 65px!important;
-
-	.reply-item
-		.root-reply-container
-			padding-left: 85px!important;
-			padding-top: 24px!important;
-			.root-reply-avatar
-				width: 82px!important;
-				padding-top: 6px!important;
-			.content-warp
-				.user-info
-					font-size: 12px!important;
-					font-weight: bold!important;
-					line-height: 18px!important;
-					word-wrap: break-word!important;
-					height:22px!important;
-					.user-name
-						font-family: inherit!important;
-						font-weight: inherit!important;
-					.user-level
-						margin-left: 11px!important;
-
-				.root-reply
-					font-size: 14px!important;
-					line-height: 20px!important;
-					.reply-info
-						font-size: 12px!important;
-						margin-top: 6px!important;
-						.reply-time
-							margin-right: 20px!important;
-						.reply-dislike
-							margin-right: 15px!important;
-						.reply-btn
-							padding: 0 5px;
-							border-radius: 4px;
-							margin-right: 15px;
-							cursor: pointer;
-							&:hover
-								color: #00a1d6!important;
-								background: #e5e9ef!important;
-		.sub-reply-container
-			padding-left: 78px!important;
-		&.login-limit-reply-end
-			.login-limit-mask //未登录遮罩
-				display: none!important;
-
-	.sub-reply-item
-		font-size: 14px!important
-		line-height 20px!important
-		.sub-user-info
-			.sub-user-name
-				font-size: 12px!important;
-				font-weight: bold!important;
-				line-height: 18px!important;
-				word-wrap: break-word!important;
-				font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif!important;
-			.sub-user-level
-				margin-left: 11px;
-		.sub-reply-info
-			line-height: 14px!important;
-			margin-top: 6px!important;
-			font-size: 12px!important;
-
-	.sub-reply-list
-		.view-more
-			font-size: 12px!important;
-			color: #6d757a!important;
-			font-weight: bolder!important;
-			.view-more-default
-				.view-more-btn
-					color: #00a1d6;
-					padding: 2px 3px;
-					border-radius: 4px;
-					&:hover
-						background: #e5e9ef;
-						color: #00a1d6;
-			.view-more-pagination
-				span
-					transition: color .3s;
-					line-height: 26px
-
-	.reply-content-container
-		.reply-content
-			line-height: inherit;
-			font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,Helvetica,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,sans-serif;
-		.jump-link
-		.icon 
-			line-height inherit!important
-		.icon
-			&.search-word
-				position: relative;
-				top: -1px;
-
-
-	.reply-operation
-		.operation-list
-			padding: 10px 0!important;
-	/* 评论 end */
+	stylusAreaCommentShadowDOMVer()
 
 	.image-exhibition
 		.preview-image-container
@@ -1468,6 +1499,7 @@ stylusSearch()
 						white-space: nowrap;
 						overflow: hidden;
 	/* 视频项目 end */
+
 
 @-moz-document url-prefix("https://www.bilibili.com/video/")
 	//视频播放页
