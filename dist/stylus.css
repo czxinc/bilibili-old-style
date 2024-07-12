@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           B站仿旧版样式（搜索页(beta)、播放页、稍后再看播放页）（stylus版）
 @namespace      github.com/czxinc/bilibili-old-style
-@version        8.0.0
+@version        8.0.1
 @preprocessor    stylus
 @homepageURL     https://github.com/czxinc/bilibili-old-style
 @supportURL   https://github.com/czxinc/bilibili-old-style
@@ -870,6 +870,7 @@ stylusVideo()
 				padding-left: 13px!important;
 	/* 评论上面的广播公告栏 end */
 
+	stylusAreaComment()
 	stylusAreaCommentShadowDOMVer()
 
 	.image-exhibition
