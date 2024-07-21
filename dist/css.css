@@ -1,10 +1,10 @@
 /* ==UserStyle==
-@name           B站仿旧版样式（搜索页(beta)、播放页、稍后再看播放页）（css版）
+@name           B站仿旧版样式（番剧/综艺播放页(beta)、搜索页(beta)、播放页、稍后再看播放页）（css版）
 @namespace      github.com/czxinc/bilibili-old-style
-@version        8.0.1
+@version        9.0.0
 @homepageURL     https://github.com/czxinc/bilibili-old-style
 @supportURL   https://github.com/czxinc/bilibili-old-style
-@description    B站仿旧版样式，仅播放页和稍后再看播放页，搜索页还在改造中
+@description    B站仿旧版样式，仅播放页和稍后再看播放页，搜索页、番剧/综艺播放页还在改造中
 @author         CZX Fuckerman
 @license      GPL
 
@@ -3751,6 +3751,265 @@
     width: 15.1px;
     height: 15.1px;
   }
+  :root {
+    --right-bar-width: 320px;
+    --o: calc(16 * (0.743 * 100vh - 108.7px) / 9);
+    --r: calc(100vw - 152px - 350px);
+    --s: clamp(638px, calc(min(var(--r), var(--o))), 1280px);
+    --l: calc(var(--s) + 350px);
+    --video-height: calc(9 * (var(--s)) / 16 + 46px);
+  }
+  .main-container {
+    --containerWidth: var(--l);
+  }
+  #bilibili-player-wrap {
+    height: var(--video-height);
+  }
+  #bilibili-player-wrap #bilibili-player .bpx-player-sending-bar {
+    height: 46px !important;
+  }
+  div[class*="eplist_ep_list_wrapper"] div[class*="numberList_wrapper"] {
+    gap: 10px 9px;
+  }
+  div[class*="eplist_ep_list_wrapper"] div[class*="numberList_wrapper"] div[class*="numberListItem_number_list_item"] {
+    width: 64px;
+    height: 36px;
+    border-radius: 2px;
+    background-color: #fff;
+    border: 1px solid #e5e9ef;
+    padding: 0;
+    text-align: center;
+    transition: none;
+    overflow: visible;
+    opacity: 1;
+    margin: 0px !important;
+  }
+  div[class*="eplist_ep_list_wrapper"] div[class*="numberList_wrapper"] div[class*="numberListItem_number_list_item"] span[class*="numberListItem_title"] {
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    height: 36px;
+    line-height: 36px;
+    display: block;
+    font-size: 12px;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif;
+  }
+  div[class*="eplist_ep_list_wrapper"] div[class*="numberList_wrapper"] div[class*="numberListItem_number_list_item"] div[class*="numberListItem_badge"] {
+    height: 16px;
+    line-height: 16px;
+    top: -4px;
+    right: -2px;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif;
+    border-radius: 0px;
+  }
+  div[class*="eplist_ep_list_wrapper"] div[class*="numberList_wrapper"] div[class*="numberListItem_select"] {
+    border-color: #00a1d6;
+    background-color: #00a1d6;
+    color: #fff;
+  }
+  div[class*="RecommendItem_wrap"] div[class*="RecommendItem_cover"] {
+    width: 141px;
+    height: 80px;
+    border-radius: 2px;
+  }
+  div[class*="RecommendItem_wrap"] div[class*="RecommendItem_title"] {
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif;
+  }
+  .bili-comment.browser-pc * {
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+  }
+  .bili-comment.browser-pc * a {
+    outline: none;
+    color: #00a1d6;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .bili-comment.browser-pc * a:hover {
+    color: #f25d8e;
+  }
+  .reply-header .reply-navigation .nav-bar .nav-title {
+    font-size: 18px !important;
+    line-height: 24px !important;
+    font-weight: normal !important;
+  }
+  .reply-header .reply-navigation .nav-bar .nav-title .nav-title-text {
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif !important;
+  }
+  .reply-header .reply-navigation .nav-bar .nav-title .total-reply {
+    color: inherit !important;
+    font-size: 18px !important;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif !important;
+  }
+  .reply-header .reply-navigation .nav-bar .nav-sort {
+    font-size: 14px !important;
+    color: #222 !important;
+  }
+  .reply-header .reply-navigation .nav-bar .nav-sort .hot-sort,
+  .reply-header .reply-navigation .nav-bar .nav-sort .time-sort {
+    font-weight: bold !important;
+  }
+  .reply-header .reply-navigation .nav-bar .nav-sort.hot .hot-sort,
+  .reply-header .reply-navigation .nav-bar .nav-sort.time .time-sort {
+    color: #00a1d6 !important;
+  }
+  .emoji-panel {
+    margin-top: 7px;
+    margin-bottom: 10px;
+    box-shadow: 0 11px 12px 0 rgba(106,115,133,0.3);
+    top: 27px;
+  }
+  .emoji-panel .emoji-content {
+    height: 196px !important;
+  }
+  .reply-list .login-prompt {
+    border-radius: 4px !important;
+  }
+  .reply-box .box-normal .reply-box-send {
+    background-color: #00a1d6;
+    border: 1px solid #00a1d6;
+    transition: 0.1s;
+  }
+  .reply-box .box-normal .reply-box-send:hover {
+    background-color: #00b5e5;
+    border-color: #00b5e5;
+  }
+  .reply-box .box-normal .reply-box-send:after {
+    content: none !important;
+  }
+  .reply-box .box-normal .reply-box-warp .reply-box-textarea {
+    font-size: 12px;
+    line-height: normal !important;
+  }
+  .reply-box .box-normal .reply-box-warp .reply-box-textarea:hover {
+    border-color: #00a1d6 !important;
+    background-color: #fff !important;
+  }
+  .reply-box.disabled .box-normal .reply-box-send {
+    background-color: #e5e9ef !important;
+    border-color: #e5e9ef !important;
+    color: #b8c0cc !important;
+  }
+  .reply-box.fixed-box .box-normal .reply-box-warp .reply-box-textarea {
+    padding-top: 10px;
+  }
+  .reply-box.fixed-box .box-normal .reply-box-warp .textarea-wrap {
+    padding: 0px;
+  }
+  .main-reply-box .box-normal {
+    height: 65px !important;
+  }
+  .main-reply-box .box-normal .reply-box-send {
+    width: 70px !important;
+    height: 64px !important;
+  }
+  .main-reply-box .box-normal .reply-box-wrap .reply-box-textarea {
+    height: 65px !important;
+  }
+  .reply-item .root-reply-container {
+    padding-left: 85px !important;
+    padding-top: 24px !important;
+  }
+  .reply-item .root-reply-container .root-reply-avatar {
+    width: 82px !important;
+    padding-top: 6px !important;
+  }
+  .reply-item .root-reply-container .content-warp .user-info {
+    font-size: 12px !important;
+    font-weight: bold !important;
+    line-height: 18px !important;
+    word-wrap: break-word !important;
+    height: 22px !important;
+  }
+  .reply-item .root-reply-container .content-warp .user-info .user-name {
+    font-family: inherit !important;
+    font-weight: inherit !important;
+  }
+  .reply-item .root-reply-container .content-warp .user-info .user-level {
+    margin-left: 11px !important;
+  }
+  .reply-item .root-reply-container .content-warp .root-reply {
+    font-size: 14px !important;
+    line-height: 20px !important;
+  }
+  .reply-item .root-reply-container .content-warp .root-reply .reply-info {
+    font-size: 12px !important;
+    margin-top: 6px !important;
+  }
+  .reply-item .root-reply-container .content-warp .root-reply .reply-info .reply-time {
+    margin-right: 20px !important;
+  }
+  .reply-item .root-reply-container .content-warp .root-reply .reply-info .reply-dislike {
+    margin-right: 15px !important;
+  }
+  .reply-item .root-reply-container .content-warp .root-reply .reply-info .reply-btn {
+    padding: 0 5px;
+    border-radius: 4px;
+    margin-right: 15px;
+    cursor: pointer;
+  }
+  .reply-item .root-reply-container .content-warp .root-reply .reply-info .reply-btn:hover {
+    color: #00a1d6 !important;
+    background: #e5e9ef !important;
+  }
+  .reply-item .sub-reply-container {
+    padding-left: 78px !important;
+  }
+  .reply-item.login-limit-reply-end .login-limit-mask {
+    display: none !important;
+  }
+  .sub-reply-item {
+    font-size: 14px !important;
+    line-height: 20px !important;
+  }
+  .sub-reply-item .sub-user-info .sub-user-name {
+    font-size: 12px !important;
+    font-weight: bold !important;
+    line-height: 18px !important;
+    word-wrap: break-word !important;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif !important;
+  }
+  .sub-reply-item .sub-user-info .sub-user-level {
+    margin-left: 11px;
+  }
+  .sub-reply-item .sub-reply-info {
+    line-height: 14px !important;
+    margin-top: 6px !important;
+    font-size: 12px !important;
+  }
+  .sub-reply-list .view-more {
+    font-size: 12px !important;
+    color: #6d757a !important;
+    font-weight: bolder !important;
+  }
+  .sub-reply-list .view-more .view-more-default .view-more-btn {
+    color: #00a1d6;
+    padding: 2px 3px;
+    border-radius: 4px;
+  }
+  .sub-reply-list .view-more .view-more-default .view-more-btn:hover {
+    background: #e5e9ef;
+    color: #00a1d6;
+  }
+  .sub-reply-list .view-more .view-more-pagination span {
+    transition: color 0.3s;
+    line-height: 26px;
+  }
+  .reply-content-container .reply-content {
+    line-height: inherit;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif;
+  }
+  .reply-content-container .jump-link,
+  .reply-content-container .icon {
+    line-height: inherit !important;
+  }
+  .reply-content-container .icon.search-word {
+    position: relative;
+    top: -1px;
+  }
+  .reply-operation .operation-list {
+    padding: 10px 0 !important;
+  }
 }
 @-moz-document url-prefix("https://www.bilibili.com/bangumi/play/ep") {
   #biliMainHeader {
@@ -4113,6 +4372,265 @@
   .bili-avatar-right-icon {
     width: 15.1px;
     height: 15.1px;
+  }
+  :root {
+    --right-bar-width: 320px;
+    --o: calc(16 * (0.743 * 100vh - 108.7px) / 9);
+    --r: calc(100vw - 152px - 350px);
+    --s: clamp(638px, calc(min(var(--r), var(--o))), 1280px);
+    --l: calc(var(--s) + 350px);
+    --video-height: calc(9 * (var(--s)) / 16 + 46px);
+  }
+  .main-container {
+    --containerWidth: var(--l);
+  }
+  #bilibili-player-wrap {
+    height: var(--video-height);
+  }
+  #bilibili-player-wrap #bilibili-player .bpx-player-sending-bar {
+    height: 46px !important;
+  }
+  div[class*="eplist_ep_list_wrapper"] div[class*="numberList_wrapper"] {
+    gap: 10px 9px;
+  }
+  div[class*="eplist_ep_list_wrapper"] div[class*="numberList_wrapper"] div[class*="numberListItem_number_list_item"] {
+    width: 64px;
+    height: 36px;
+    border-radius: 2px;
+    background-color: #fff;
+    border: 1px solid #e5e9ef;
+    padding: 0;
+    text-align: center;
+    transition: none;
+    overflow: visible;
+    opacity: 1;
+    margin: 0px !important;
+  }
+  div[class*="eplist_ep_list_wrapper"] div[class*="numberList_wrapper"] div[class*="numberListItem_number_list_item"] span[class*="numberListItem_title"] {
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    height: 36px;
+    line-height: 36px;
+    display: block;
+    font-size: 12px;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif;
+  }
+  div[class*="eplist_ep_list_wrapper"] div[class*="numberList_wrapper"] div[class*="numberListItem_number_list_item"] div[class*="numberListItem_badge"] {
+    height: 16px;
+    line-height: 16px;
+    top: -4px;
+    right: -2px;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif;
+    border-radius: 0px;
+  }
+  div[class*="eplist_ep_list_wrapper"] div[class*="numberList_wrapper"] div[class*="numberListItem_select"] {
+    border-color: #00a1d6;
+    background-color: #00a1d6;
+    color: #fff;
+  }
+  div[class*="RecommendItem_wrap"] div[class*="RecommendItem_cover"] {
+    width: 141px;
+    height: 80px;
+    border-radius: 2px;
+  }
+  div[class*="RecommendItem_wrap"] div[class*="RecommendItem_title"] {
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif;
+  }
+  .bili-comment.browser-pc * {
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+  }
+  .bili-comment.browser-pc * a {
+    outline: none;
+    color: #00a1d6;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .bili-comment.browser-pc * a:hover {
+    color: #f25d8e;
+  }
+  .reply-header .reply-navigation .nav-bar .nav-title {
+    font-size: 18px !important;
+    line-height: 24px !important;
+    font-weight: normal !important;
+  }
+  .reply-header .reply-navigation .nav-bar .nav-title .nav-title-text {
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif !important;
+  }
+  .reply-header .reply-navigation .nav-bar .nav-title .total-reply {
+    color: inherit !important;
+    font-size: 18px !important;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif !important;
+  }
+  .reply-header .reply-navigation .nav-bar .nav-sort {
+    font-size: 14px !important;
+    color: #222 !important;
+  }
+  .reply-header .reply-navigation .nav-bar .nav-sort .hot-sort,
+  .reply-header .reply-navigation .nav-bar .nav-sort .time-sort {
+    font-weight: bold !important;
+  }
+  .reply-header .reply-navigation .nav-bar .nav-sort.hot .hot-sort,
+  .reply-header .reply-navigation .nav-bar .nav-sort.time .time-sort {
+    color: #00a1d6 !important;
+  }
+  .emoji-panel {
+    margin-top: 7px;
+    margin-bottom: 10px;
+    box-shadow: 0 11px 12px 0 rgba(106,115,133,0.3);
+    top: 27px;
+  }
+  .emoji-panel .emoji-content {
+    height: 196px !important;
+  }
+  .reply-list .login-prompt {
+    border-radius: 4px !important;
+  }
+  .reply-box .box-normal .reply-box-send {
+    background-color: #00a1d6;
+    border: 1px solid #00a1d6;
+    transition: 0.1s;
+  }
+  .reply-box .box-normal .reply-box-send:hover {
+    background-color: #00b5e5;
+    border-color: #00b5e5;
+  }
+  .reply-box .box-normal .reply-box-send:after {
+    content: none !important;
+  }
+  .reply-box .box-normal .reply-box-warp .reply-box-textarea {
+    font-size: 12px;
+    line-height: normal !important;
+  }
+  .reply-box .box-normal .reply-box-warp .reply-box-textarea:hover {
+    border-color: #00a1d6 !important;
+    background-color: #fff !important;
+  }
+  .reply-box.disabled .box-normal .reply-box-send {
+    background-color: #e5e9ef !important;
+    border-color: #e5e9ef !important;
+    color: #b8c0cc !important;
+  }
+  .reply-box.fixed-box .box-normal .reply-box-warp .reply-box-textarea {
+    padding-top: 10px;
+  }
+  .reply-box.fixed-box .box-normal .reply-box-warp .textarea-wrap {
+    padding: 0px;
+  }
+  .main-reply-box .box-normal {
+    height: 65px !important;
+  }
+  .main-reply-box .box-normal .reply-box-send {
+    width: 70px !important;
+    height: 64px !important;
+  }
+  .main-reply-box .box-normal .reply-box-wrap .reply-box-textarea {
+    height: 65px !important;
+  }
+  .reply-item .root-reply-container {
+    padding-left: 85px !important;
+    padding-top: 24px !important;
+  }
+  .reply-item .root-reply-container .root-reply-avatar {
+    width: 82px !important;
+    padding-top: 6px !important;
+  }
+  .reply-item .root-reply-container .content-warp .user-info {
+    font-size: 12px !important;
+    font-weight: bold !important;
+    line-height: 18px !important;
+    word-wrap: break-word !important;
+    height: 22px !important;
+  }
+  .reply-item .root-reply-container .content-warp .user-info .user-name {
+    font-family: inherit !important;
+    font-weight: inherit !important;
+  }
+  .reply-item .root-reply-container .content-warp .user-info .user-level {
+    margin-left: 11px !important;
+  }
+  .reply-item .root-reply-container .content-warp .root-reply {
+    font-size: 14px !important;
+    line-height: 20px !important;
+  }
+  .reply-item .root-reply-container .content-warp .root-reply .reply-info {
+    font-size: 12px !important;
+    margin-top: 6px !important;
+  }
+  .reply-item .root-reply-container .content-warp .root-reply .reply-info .reply-time {
+    margin-right: 20px !important;
+  }
+  .reply-item .root-reply-container .content-warp .root-reply .reply-info .reply-dislike {
+    margin-right: 15px !important;
+  }
+  .reply-item .root-reply-container .content-warp .root-reply .reply-info .reply-btn {
+    padding: 0 5px;
+    border-radius: 4px;
+    margin-right: 15px;
+    cursor: pointer;
+  }
+  .reply-item .root-reply-container .content-warp .root-reply .reply-info .reply-btn:hover {
+    color: #00a1d6 !important;
+    background: #e5e9ef !important;
+  }
+  .reply-item .sub-reply-container {
+    padding-left: 78px !important;
+  }
+  .reply-item.login-limit-reply-end .login-limit-mask {
+    display: none !important;
+  }
+  .sub-reply-item {
+    font-size: 14px !important;
+    line-height: 20px !important;
+  }
+  .sub-reply-item .sub-user-info .sub-user-name {
+    font-size: 12px !important;
+    font-weight: bold !important;
+    line-height: 18px !important;
+    word-wrap: break-word !important;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif !important;
+  }
+  .sub-reply-item .sub-user-info .sub-user-level {
+    margin-left: 11px;
+  }
+  .sub-reply-item .sub-reply-info {
+    line-height: 14px !important;
+    margin-top: 6px !important;
+    font-size: 12px !important;
+  }
+  .sub-reply-list .view-more {
+    font-size: 12px !important;
+    color: #6d757a !important;
+    font-weight: bolder !important;
+  }
+  .sub-reply-list .view-more .view-more-default .view-more-btn {
+    color: #00a1d6;
+    padding: 2px 3px;
+    border-radius: 4px;
+  }
+  .sub-reply-list .view-more .view-more-default .view-more-btn:hover {
+    background: #e5e9ef;
+    color: #00a1d6;
+  }
+  .sub-reply-list .view-more .view-more-pagination span {
+    transition: color 0.3s;
+    line-height: 26px;
+  }
+  .reply-content-container .reply-content {
+    line-height: inherit;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif;
+  }
+  .reply-content-container .jump-link,
+  .reply-content-container .icon {
+    line-height: inherit !important;
+  }
+  .reply-content-container .icon.search-word {
+    position: relative;
+    top: -1px;
+  }
+  .reply-operation .operation-list {
+    padding: 10px 0 !important;
   }
 }
 @-moz-document url-prefix("https://t.bilibili.com/") {

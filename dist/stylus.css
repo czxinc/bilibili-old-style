@@ -1,11 +1,11 @@
 /* ==UserStyle==
-@name           B站仿旧版样式（搜索页(beta)、播放页、稍后再看播放页）（stylus版）
+@name           B站仿旧版样式（番剧/综艺播放页(beta)、搜索页(beta)、播放页、稍后再看播放页）（stylus版）
 @namespace      github.com/czxinc/bilibili-old-style
-@version        8.0.1
+@version        9.0.0
 @preprocessor    stylus
 @homepageURL     https://github.com/czxinc/bilibili-old-style
 @supportURL   https://github.com/czxinc/bilibili-old-style
-@description    B站仿旧版样式，仅播放页和稍后再看播放页，搜索页还在改造中
+@description    B站仿旧版样式，仅播放页和稍后再看播放页，搜索页、番剧/综艺播放页还在改造中
 @author         CZX Fuckerman
 @license      GPL
 
@@ -1501,6 +1501,71 @@ stylusSearch()
 						overflow: hidden;
 	/* 视频项目 end */
 
+//番剧、综艺 视频播放页
+stylusBangumi()
+	:root
+		--right-bar-width: 320px;
+		
+		--o: calc(16 * (0.743 * 100vh - 108.7px) / 9);
+		--r: calc(100vw - 152px - 350px);
+		--s: clamp(638px, calc(min(var(--r), var(--o))), 1280px);
+		--l: calc(var(--s) + 350px);
+		--video-height: calc(9 * (var(--s)) / 16 + 46px);
+
+	.main-container
+		--containerWidth: var(--l);
+
+	#bilibili-player-wrap
+		height: var(--video-height);
+		#bilibili-player
+			.bpx-player-sending-bar 
+				height:46px !important;
+	
+	div[class*="eplist_ep_list_wrapper"]
+		div[class*="numberList_wrapper"] 
+			gap: 10px 9px;
+			div[class*="numberListItem_number_list_item"] //单集数项目
+				width: 64px;
+				height: 36px;
+				border-radius: 2px;
+				background-color: #fff;
+				border: 1px solid #e5e9ef;
+				padding: 0;
+				text-align: center;
+				transition: none;
+				overflow: visible;
+				opacity: 1;
+				margin: 0px!important;
+				span[class*="numberListItem_title"] //单集数文字
+					overflow: hidden;
+					-o-text-overflow: ellipsis;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+					height: 36px;
+					line-height: 36px;
+					display: block;
+					font-size: 12px;
+					font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif;
+				div[class*="numberListItem_badge"] //单集数标识（限免、会员等）
+					height: 16px;
+					line-height: 16px;
+					top: -4px;
+					right: -2px;
+					font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif;
+					border-radius: 0px;
+			div[class*="numberListItem_select"] //当前单集数项目
+				border-color: #00a1d6;
+				background-color: #00a1d6;
+				color: #fff;
+	div[class*="RecommendItem_wrap"]
+		div[class*="RecommendItem_cover"]
+			width: 141px;
+			height: 80px;
+			border-radius: 2px;
+		div[class*="RecommendItem_title"]
+			font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif;
+	stylusAreaComment()
+	
 
 @-moz-document url-prefix("https://www.bilibili.com/video/")
 	//视频播放页
@@ -1530,10 +1595,12 @@ stylusSearch()
 @-moz-document url-prefix("https://www.bilibili.com/bangumi/play/ss")
 	//番剧、综艺播放页
 	stylusTopbar()
+	stylusBangumi()
 	
 @-moz-document url-prefix("https://www.bilibili.com/bangumi/play/ep")
 	//电影、电视剧播放页
 	stylusTopbar()
+	stylusBangumi()
 	
 @-moz-document url-prefix("https://t.bilibili.com/")
 	//动态首页
