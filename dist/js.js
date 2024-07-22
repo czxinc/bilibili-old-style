@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         B站仿旧版样式（番剧/综艺播放页(beta)、搜索页(beta)、播放页、稍后再看播放页）（js版）
 // @namespace    github.com/czxinc/bilibili-old-style
-// @version      9.0.0
+// @version      9.0.1
 // @description  B站仿旧版样式，仅播放页和稍后再看播放页，搜索页、番剧/综艺播放页还在改造中
 // @author       CZX Fuckerman
 // @license      GPL
@@ -3847,7 +3847,10 @@
     height: 80px;
     border-radius: 2px;
   }
-  div[class*="RecommendItem_wrap"] div[class*="RecommendItem_title"] {
+  div[class*="RecommendItem_wrap"] div[class*="RecommendItem_right_wrap"] {
+    margin: 0px !important;
+  }
+  div[class*="RecommendItem_wrap"] div[class*="RecommendItem_right_wrap"] div[class*="RecommendItem_title"] {
     font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif;
   }
   .bili-comment.browser-pc * {
@@ -4474,7 +4477,10 @@
     height: 80px;
     border-radius: 2px;
   }
-  div[class*="RecommendItem_wrap"] div[class*="RecommendItem_title"] {
+  div[class*="RecommendItem_wrap"] div[class*="RecommendItem_right_wrap"] {
+    margin: 0px !important;
+  }
+  div[class*="RecommendItem_wrap"] div[class*="RecommendItem_right_wrap"] div[class*="RecommendItem_title"] {
     font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif;
   }
   .bili-comment.browser-pc * {
