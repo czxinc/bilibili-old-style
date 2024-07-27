@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         B站仿旧版样式（番剧/综艺播放页(beta)、搜索页(beta)、播放页、稍后再看播放页）（js版）
 // @namespace    github.com/czxinc/bilibili-old-style
-// @version      9.0.1
+// @version      9.0.2
 // @description  B站仿旧版样式，仅播放页和稍后再看播放页，搜索页、番剧/综艺播放页还在改造中
 // @author       CZX Fuckerman
 // @license      GPL
@@ -1049,7 +1049,7 @@
   .video-page-operator-card-small .card-box .pic-box .duration,
   .recommend-video-card .card-box .pic-box .duration {
     font-size: 12px !important;
-    line-height: inherit !important;
+    line-height: normal !important;
     height: 14px !important;
   }
   .video-page-card-small .card-box .pic-box .framepreview-box .video-awesome-img,
@@ -1059,10 +1059,10 @@
     width: 141px !important;
     height: 80px !important;
   }
-  .video-page-card-small .card-box .pic-box .rcmd-cover-img .b-img__inner img,
-  .video-page-special-card-small .card-box .pic-box .rcmd-cover-img .b-img__inner img,
-  .video-page-operator-card-small .card-box .pic-box .rcmd-cover-img .b-img__inner img,
-  .recommend-video-card .card-box .pic-box .rcmd-cover-img .b-img__inner img {
+  .video-page-card-small .card-box .pic-box .rcmd-cover-img,
+  .video-page-special-card-small .card-box .pic-box .rcmd-cover-img,
+  .video-page-operator-card-small .card-box .pic-box .rcmd-cover-img,
+  .recommend-video-card .card-box .pic-box .rcmd-cover-img {
     border-radius: 2px !important;
   }
   .video-page-card-small .card-box .playinfo .play,
@@ -2185,7 +2185,7 @@
   .video-page-operator-card-small .card-box .pic-box .duration,
   .recommend-video-card .card-box .pic-box .duration {
     font-size: 12px !important;
-    line-height: inherit !important;
+    line-height: normal !important;
     height: 14px !important;
   }
   .video-page-card-small .card-box .pic-box .framepreview-box .video-awesome-img,
@@ -2195,10 +2195,10 @@
     width: 141px !important;
     height: 80px !important;
   }
-  .video-page-card-small .card-box .pic-box .rcmd-cover-img .b-img__inner img,
-  .video-page-special-card-small .card-box .pic-box .rcmd-cover-img .b-img__inner img,
-  .video-page-operator-card-small .card-box .pic-box .rcmd-cover-img .b-img__inner img,
-  .recommend-video-card .card-box .pic-box .rcmd-cover-img .b-img__inner img {
+  .video-page-card-small .card-box .pic-box .rcmd-cover-img,
+  .video-page-special-card-small .card-box .pic-box .rcmd-cover-img,
+  .video-page-operator-card-small .card-box .pic-box .rcmd-cover-img,
+  .recommend-video-card .card-box .pic-box .rcmd-cover-img {
     border-radius: 2px !important;
   }
   .video-page-card-small .card-box .playinfo .play,
