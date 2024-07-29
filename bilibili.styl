@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           B站仿旧版样式（番剧/综艺播放页(beta)、搜索页(beta)、播放页、稍后再看播放页）
 @namespace      github.com/czxinc/bilibili-old-style
-@version        9.0.2
+@version        9.1.0
 @preprocessor    stylus
 @homepageURL     https://github.com/czxinc/bilibili-old-style
 @supportURL   https://github.com/czxinc/bilibili-old-style
@@ -692,6 +692,12 @@ stylusVideo()
 		.video-toolbar-left
 			.toolbar-left-item-wrap 
 				margin-right: 8px!important;
+				.ring-progress //三连进度条
+					width: 34px!important;
+					height: 34px!important;	
+					left: -3px!important;
+					top: -3px!important;
+
 		.video-toolbar-right
 			.toolbar-right-note
 				margin-right: 0px!important;
@@ -733,6 +739,13 @@ stylusVideo()
 			&.video-complaint-icon
 				display: none;
 
+	.svga-container.svga-center //三连图标弹出
+			transform: translate(-4.5px, -4.5px) scale(0.8)!important;
+	@media (min-width: 1681px)
+		.svga-container.svga-center //三连图标弹出
+			transform: translate(-6.5px, -6.5px) scale(0.8)!important;
+
+	
 
 	.toolbar-right-note
 		.video-toolbar-item-text
