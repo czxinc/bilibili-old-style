@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           B站仿旧版样式（番剧/综艺播放页(beta)、搜索页(beta)、播放页、稍后再看播放页）（css版）
 @namespace      github.com/czxinc/bilibili-old-style
-@version        9.0.2
+@version        9.1.0
 @homepageURL     https://github.com/czxinc/bilibili-old-style
 @supportURL   https://github.com/czxinc/bilibili-old-style
 @description    B站仿旧版样式，仅播放页和稍后再看播放页，搜索页、番剧/综艺播放页还在改造中
@@ -476,6 +476,12 @@
   .video-toolbar-container .video-toolbar-left .toolbar-left-item-wrap {
     margin-right: 8px !important;
   }
+  .video-toolbar-container .video-toolbar-left .toolbar-left-item-wrap .ring-progress {
+    width: 34px !important;
+    height: 34px !important;
+    left: -3px !important;
+    top: -3px !important;
+  }
   .video-toolbar-container .video-toolbar-right .toolbar-right-note {
     margin-right: 0px !important;
   }
@@ -522,6 +528,14 @@
   .video-toolbar-right-item .video-toolbar-item-icon.video-complaint-icon {
     display: none;
   }
+  .svga-container.svga-center {
+    transform: translate(-4.5px, -4.5px) scale(0.8) !important;
+  }
+@media (min-width: 1681px) {
+    .svga-container.svga-center {
+      transform: translate(-6.5px, -6.5px) scale(0.8) !important;
+    }
+}
   .toolbar-right-note .video-toolbar-item-text {
     transition: 0.3s;
     width: auto;
@@ -1607,6 +1621,12 @@
   .video-toolbar-container .video-toolbar-left .toolbar-left-item-wrap {
     margin-right: 8px !important;
   }
+  .video-toolbar-container .video-toolbar-left .toolbar-left-item-wrap .ring-progress {
+    width: 34px !important;
+    height: 34px !important;
+    left: -3px !important;
+    top: -3px !important;
+  }
   .video-toolbar-container .video-toolbar-right .toolbar-right-note {
     margin-right: 0px !important;
   }
@@ -1653,6 +1673,14 @@
   .video-toolbar-right-item .video-toolbar-item-icon.video-complaint-icon {
     display: none;
   }
+  .svga-container.svga-center {
+    transform: translate(-4.5px, -4.5px) scale(0.8) !important;
+  }
+@media (min-width: 1681px) {
+    .svga-container.svga-center {
+      transform: translate(-6.5px, -6.5px) scale(0.8) !important;
+    }
+}
   .toolbar-right-note .video-toolbar-item-text {
     transition: 0.3s;
     width: auto;
