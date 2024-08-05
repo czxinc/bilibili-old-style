@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           B站仿旧版样式（番剧/综艺播放页(beta)、搜索页(beta)、播放页、稍后再看播放页）（css版）
 @namespace      github.com/czxinc/bilibili-old-style
-@version        9.1.0
+@version        9.2.0
 @homepageURL     https://github.com/czxinc/bilibili-old-style
 @supportURL   https://github.com/czxinc/bilibili-old-style
 @description    B站仿旧版样式，仅播放页和稍后再看播放页，搜索页、番剧/综艺播放页还在改造中
@@ -964,6 +964,82 @@
   .recommend-list-v1 .rec-footer {
     border-radius: 2px !important;
   }
+  .action-list-container .action-list-item-wrap {
+    font-family: Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif !important;
+  }
+  .action-list-container .action-list-item-wrap .cover {
+    border-radius: 2px !important;
+    width: 104px;
+    height: 58px;
+  }
+  .action-list-container .action-list-item-wrap .cover img {
+    border-radius: 2px !important;
+  }
+  .action-list-container .action-list-item-wrap .actionlist-item-inner div.title {
+    font-size: 14px;
+  }
+  .action-list-container .action-list-item-wrap .actionlist-item-inner div.views {
+    font-size: 12px;
+  }
+  .video-sections-v1,
+  .base-video-sections-v1 {
+    border-radius: 2px !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif !important;
+  }
+  .video-sections-v1 .first-line-left,
+  .base-video-sections-v1 .first-line-left {
+    max-width: 195px;
+  }
+  .video-sections-v1 .first-line-left a,
+  .base-video-sections-v1 .first-line-left a {
+    font-size: 16px !important;
+    font-weight: 400;
+    line-height: 16px;
+  }
+  .video-sections-v1 .first-line-left .cur-page,
+  .base-video-sections-v1 .first-line-left .cur-page {
+    color: #999;
+    font-size: 12px !important;
+    line-height: 16px !important;
+  }
+  .video-sections-v1 .video-sections-content-list .video-sections-item,
+  .base-video-sections-v1 .video-sections-content-list .video-sections-item {
+    width: 295px !important;
+  }
+  .video-sections-v1 .video-sections-content-list .video-sections-item .video-section-title p,
+  .base-video-sections-v1 .video-sections-content-list .video-sections-item .video-section-title p {
+    font-size: 12px;
+    color: #212121;
+    line-height: 18px;
+    font-family: PingFangSC-Regular;
+  }
+  .video-sections-v1 .video-sections-content-list .video-sections-item .video-episode-card .video-episode-card__info .video-episode-card__info-title,
+  .base-video-sections-v1 .video-sections-content-list .video-sections-item .video-episode-card .video-episode-card__info .video-episode-card__info-title {
+    font-size: 14px;
+    color: #212121;
+    line-height: 18px;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif !important;
+  }
+  .video-sections-v1 .video-sections-content-list .video-sections-item .video-episode-card .video-episode-card__info .video-episode-card__info-title-playing,
+  .base-video-sections-v1 .video-sections-content-list .video-sections-item .video-episode-card .video-episode-card__info .video-episode-card__info-title-playing {
+    color: #00a1d6;
+  }
+  .video-sections-v1 .video-sections-content-list .video-sections-item .video-episode-card .video-episode-card__info .video-episode-card__info__number,
+  .base-video-sections-v1 .video-sections-content-list .video-sections-item .video-episode-card .video-episode-card__info .video-episode-card__info__number {
+    font-size: 12px;
+    color: #999;
+    line-height: 16px;
+  }
+  .video-sections-v1 .video-sections-content-list .video-sections-item .video-episode-card:hover .video-episode-card__info .video-episode-card__info-title,
+  .base-video-sections-v1 .video-sections-content-list .video-sections-item .video-episode-card:hover .video-episode-card__info .video-episode-card__info-title {
+    color: #00a1d6;
+  }
+  .multi-page-v1 {
+    border-radius: 2px !important;
+  }
+  .multi-page-v1.small-mode .cur-list .list-box li {
+    width: 308px !important;
+  }
   .video-page-card-small,
   .video-page-special-card-small,
   .video-page-operator-card-small,
@@ -1086,29 +1162,6 @@
     width: 14px !important;
     position: relative;
     top: -1px;
-  }
-  .video-sections-v1 {
-    border-radius: 2px !important;
-  }
-  .video-sections-v1 .video-sections-item {
-    width: 295px !important;
-  }
-  .base-video-sections-v1 {
-    border-radius: 2px !important;
-/*.video-sections-head_first-line
-			.first-line-left
-				.first-line-title
-					height: 42px;
-					line-height: 42px;
-					font-size: 16px;
-					color: rgb(33, 33, 33);
-					font-weight: 400; */
-  }
-  .multi-page-v1 {
-    border-radius: 2px !important;
-  }
-  .multi-page-v1.small-mode .cur-list .list-box li {
-    width: 308px !important;
   }
   .video-card-ad-small .vcd .cover .b-img[data-v-eba1a9e8],
   .video-card-ad-small .vcd .cover img[data-v-eba1a9e8] {
@@ -2109,6 +2162,82 @@
   .recommend-list-v1 .rec-footer {
     border-radius: 2px !important;
   }
+  .action-list-container .action-list-item-wrap {
+    font-family: Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif !important;
+  }
+  .action-list-container .action-list-item-wrap .cover {
+    border-radius: 2px !important;
+    width: 104px;
+    height: 58px;
+  }
+  .action-list-container .action-list-item-wrap .cover img {
+    border-radius: 2px !important;
+  }
+  .action-list-container .action-list-item-wrap .actionlist-item-inner div.title {
+    font-size: 14px;
+  }
+  .action-list-container .action-list-item-wrap .actionlist-item-inner div.views {
+    font-size: 12px;
+  }
+  .video-sections-v1,
+  .base-video-sections-v1 {
+    border-radius: 2px !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif !important;
+  }
+  .video-sections-v1 .first-line-left,
+  .base-video-sections-v1 .first-line-left {
+    max-width: 195px;
+  }
+  .video-sections-v1 .first-line-left a,
+  .base-video-sections-v1 .first-line-left a {
+    font-size: 16px !important;
+    font-weight: 400;
+    line-height: 16px;
+  }
+  .video-sections-v1 .first-line-left .cur-page,
+  .base-video-sections-v1 .first-line-left .cur-page {
+    color: #999;
+    font-size: 12px !important;
+    line-height: 16px !important;
+  }
+  .video-sections-v1 .video-sections-content-list .video-sections-item,
+  .base-video-sections-v1 .video-sections-content-list .video-sections-item {
+    width: 295px !important;
+  }
+  .video-sections-v1 .video-sections-content-list .video-sections-item .video-section-title p,
+  .base-video-sections-v1 .video-sections-content-list .video-sections-item .video-section-title p {
+    font-size: 12px;
+    color: #212121;
+    line-height: 18px;
+    font-family: PingFangSC-Regular;
+  }
+  .video-sections-v1 .video-sections-content-list .video-sections-item .video-episode-card .video-episode-card__info .video-episode-card__info-title,
+  .base-video-sections-v1 .video-sections-content-list .video-sections-item .video-episode-card .video-episode-card__info .video-episode-card__info-title {
+    font-size: 14px;
+    color: #212121;
+    line-height: 18px;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif !important;
+  }
+  .video-sections-v1 .video-sections-content-list .video-sections-item .video-episode-card .video-episode-card__info .video-episode-card__info-title-playing,
+  .base-video-sections-v1 .video-sections-content-list .video-sections-item .video-episode-card .video-episode-card__info .video-episode-card__info-title-playing {
+    color: #00a1d6;
+  }
+  .video-sections-v1 .video-sections-content-list .video-sections-item .video-episode-card .video-episode-card__info .video-episode-card__info__number,
+  .base-video-sections-v1 .video-sections-content-list .video-sections-item .video-episode-card .video-episode-card__info .video-episode-card__info__number {
+    font-size: 12px;
+    color: #999;
+    line-height: 16px;
+  }
+  .video-sections-v1 .video-sections-content-list .video-sections-item .video-episode-card:hover .video-episode-card__info .video-episode-card__info-title,
+  .base-video-sections-v1 .video-sections-content-list .video-sections-item .video-episode-card:hover .video-episode-card__info .video-episode-card__info-title {
+    color: #00a1d6;
+  }
+  .multi-page-v1 {
+    border-radius: 2px !important;
+  }
+  .multi-page-v1.small-mode .cur-list .list-box li {
+    width: 308px !important;
+  }
   .video-page-card-small,
   .video-page-special-card-small,
   .video-page-operator-card-small,
@@ -2231,29 +2360,6 @@
     width: 14px !important;
     position: relative;
     top: -1px;
-  }
-  .video-sections-v1 {
-    border-radius: 2px !important;
-  }
-  .video-sections-v1 .video-sections-item {
-    width: 295px !important;
-  }
-  .base-video-sections-v1 {
-    border-radius: 2px !important;
-/*.video-sections-head_first-line
-			.first-line-left
-				.first-line-title
-					height: 42px;
-					line-height: 42px;
-					font-size: 16px;
-					color: rgb(33, 33, 33);
-					font-weight: 400; */
-  }
-  .multi-page-v1 {
-    border-radius: 2px !important;
-  }
-  .multi-page-v1.small-mode .cur-list .list-box li {
-    width: 308px !important;
   }
   .video-card-ad-small .vcd .cover .b-img[data-v-eba1a9e8],
   .video-card-ad-small .vcd .cover img[data-v-eba1a9e8] {
