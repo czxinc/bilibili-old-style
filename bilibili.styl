@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           B站仿旧版样式（番剧/综艺播放页(beta)、搜索页(beta)、播放页、稍后再看播放页）
 @namespace      github.com/czxinc/bilibili-old-style
-@version        9.1.0
+@version        9.2.0
 @preprocessor    stylus
 @homepageURL     https://github.com/czxinc/bilibili-old-style
 @supportURL   https://github.com/czxinc/bilibili-old-style
@@ -982,6 +982,77 @@ stylusVideo()
 			border-radius: 2px!important;
 
 	/* 右侧项目容器及分隔线 end */
+	
+	/* 稍后再看列表 start */
+	.action-list-container
+		.action-list-item-wrap
+			font-family: Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif !important;
+			.cover
+				border-radius: 2px!important;
+				width: 104px;
+				height: 58px;
+				img
+					border-radius: 2px!important;
+			.actionlist-item-inner
+				div.title //标题
+					font-size: 14px;
+				div.views //播放量
+					font-size: 12px;
+	/* 稍后再看列表 end */
+	
+	/* 合集 start */
+	.video-sections-v1 //合集（有分组）
+	.base-video-sections-v1 //合集（无分组）
+		border-radius: 2px!important;
+		font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif !important;
+		.first-line-left
+			max-width: 195px; //防止自动连播换行
+			a //合集标题
+				font-size: 16px!important;	
+				font-weight: 400;
+				line-height: 16px;
+			.cur-page	//项目数量
+				color: rgb(153, 153, 153);
+				font-size: 12px!important;
+				line-height: 16px!important;
+		.video-sections-content-list	
+			.video-sections-item
+				width:295px!important;
+				.video-section-title //分组标题
+					p
+						font-size: 12px;
+						color: rgb(33, 33, 33);
+						line-height: 18px;
+						font-family: PingFangSC-Regular;
+				.video-episode-card //项目
+					.video-episode-card__info
+						.video-episode-card__info-title	//项目标题
+							font-size: 14px;
+							color: #212121;
+							line-height: 18px;
+							font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif !important;
+						.video-episode-card__info-title-playing	//项目标题 当前播放 
+							color: #00a1d6;
+						.video-episode-card__info__number
+							font-size: 12px;
+							color: #999;
+							line-height: 16px;
+					&:hover //项目 鼠标在上 
+						.video-episode-card__info
+							.video-episode-card__info-title //项目标题 
+								color: #00a1d6;
+	/* 合集 end */
+
+	/* 分P项目 start */
+	.multi-page-v1
+		border-radius: 2px!important;
+		&.small-mode 
+			.cur-list
+				.list-box
+					li
+						width: 308px!important;
+	/* 分P项目 end */
+
 
 	/* 右侧项目（视频） start */
 	.video-page-card-small
@@ -1048,39 +1119,8 @@ stylusVideo()
 					width: 14px!important;
 					position: relative;
 					top: -1px;
-				
-				
-
 	/* 右侧项目（视频） end */
-
-	/* 合集 start */
-	.video-sections-v1
-		border-radius: 2px!important;
-		.video-sections-item
-			width:295px!important;
-
-	.base-video-sections-v1
-		border-radius: 2px!important;
-		/*.video-sections-head_first-line
-			.first-line-left
-				.first-line-title
-					height: 42px;
-					line-height: 42px;
-					font-size: 16px;
-					color: rgb(33, 33, 33);
-					font-weight: 400; */
-	/* 合集 end */
-
-	/* 分P项目 start */
-	.multi-page-v1
-		border-radius: 2px!important;
-		&.small-mode 
-			.cur-list
-				.list-box
-					li
-						width: 308px!important;
-	/* 分P项目 end */
-
+	
 	/* 接下来播放上面的广告 start */
 	.video-card-ad-small
 		.vcd
