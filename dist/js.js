@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         B站仿旧版样式（番剧/综艺播放页(beta)、搜索页(beta)、播放页、稍后再看播放页）（js版）
 // @namespace    github.com/czxinc/bilibili-old-style
-// @version      9.2.0
+// @version      9.2.1
 // @description  B站仿旧版样式，仅播放页和稍后再看播放页，搜索页、番剧/综艺播放页还在改造中
 // @author       CZX Fuckerman
 // @license      GPL
@@ -1015,10 +1015,6 @@
     color: #999;
     font-size: 12px !important;
     line-height: 16px !important;
-  }
-  .video-sections-v1 .video-sections-content-list .video-sections-item,
-  .base-video-sections-v1 .video-sections-content-list .video-sections-item {
-    width: 295px !important;
   }
   .video-sections-v1 .video-sections-content-list .video-sections-item .video-section-title p,
   .base-video-sections-v1 .video-sections-content-list .video-sections-item .video-section-title p {
@@ -2218,10 +2214,6 @@
     color: #999;
     font-size: 12px !important;
     line-height: 16px !important;
-  }
-  .video-sections-v1 .video-sections-content-list .video-sections-item,
-  .base-video-sections-v1 .video-sections-content-list .video-sections-item {
-    width: 295px !important;
   }
   .video-sections-v1 .video-sections-content-list .video-sections-item .video-section-title p,
   .base-video-sections-v1 .video-sections-content-list .video-sections-item .video-section-title p {
