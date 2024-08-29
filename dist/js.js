@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         B站仿旧版样式（番剧/综艺播放页(beta)、搜索页(beta)、播放页、稍后再看播放页）（js版）
 // @namespace    github.com/czxinc/bilibili-old-style
-// @version      9.2.2
+// @version      9.2.3
 // @description  B站仿旧版样式，仅播放页和稍后再看播放页，搜索页、番剧/综艺播放页还在改造中
 // @author       CZX Fuckerman
 // @license      GPL
@@ -412,18 +412,22 @@
   .left-container .playlist-container--left {
     max-width: 1280px;
   }
-  .left-container .video-info-container {
+  .video-info-container {
     height: 96px !important;
     padding-top: 27px !important;
     box-sizing: border-box !important;
   }
-  .left-container .video-info-container .video-title {
+  .video-info-container .video-title,
+  .video-info-container .video-title-href {
     font-size: 18px !important;
     font-weight: 500 !important;
     line-height: 26px !important;
   }
-  .left-container:has(.bpx-player-container[data-screen='wide']) .video-info-container {
-    height: 150px !important;
+  .video-container-v1:has(.left-container .bpx-player-container[data-screen='wide']) .right-container .members-info-container {
+    padding-top: 0px;
+  }
+  .video-container-v1:has(.left-container .bpx-player-container[data-screen='wide']) .right-container .members-info-container .membersinfo-wide .header {
+    display: none;
   }
   .video-info-detail {
     font-size: 12px !important;
@@ -1613,18 +1617,22 @@
   .left-container .playlist-container--left {
     max-width: 1280px;
   }
-  .left-container .video-info-container {
+  .video-info-container {
     height: 96px !important;
     padding-top: 27px !important;
     box-sizing: border-box !important;
   }
-  .left-container .video-info-container .video-title {
+  .video-info-container .video-title,
+  .video-info-container .video-title-href {
     font-size: 18px !important;
     font-weight: 500 !important;
     line-height: 26px !important;
   }
-  .left-container:has(.bpx-player-container[data-screen='wide']) .video-info-container {
-    height: 150px !important;
+  .video-container-v1:has(.left-container .bpx-player-container[data-screen='wide']) .right-container .members-info-container {
+    padding-top: 0px;
+  }
+  .video-container-v1:has(.left-container .bpx-player-container[data-screen='wide']) .right-container .members-info-container .membersinfo-wide .header {
+    display: none;
   }
   .video-info-detail {
     font-size: 12px !important;

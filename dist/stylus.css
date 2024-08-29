@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           B站仿旧版样式（番剧/综艺播放页(beta)、搜索页(beta)、播放页、稍后再看播放页）（stylus版）
 @namespace      github.com/czxinc/bilibili-old-style
-@version        9.2.2
+@version        9.2.3
 @preprocessor    stylus
 @homepageURL     https://github.com/czxinc/bilibili-old-style
 @supportURL   https://github.com/czxinc/bilibili-old-style
@@ -604,18 +604,24 @@ stylusVideo()
 	.left-container
 		.playlist-container--left //适配稍后再看
 			max-width: unitToPx(leftWidth);
-		.video-info-container
-			height: 96px!important;
-			padding-top: 27px!important;
-			box-sizing: border-box!important;
-			.video-title //视频标题
-				font-size: 18px!important;
-				font-weight: 500!important;
-				line-height: 26px!important;
+			
+	.video-info-container
+		height: 96px!important;
+		padding-top: 27px!important;
+		box-sizing: border-box!important;
+		.video-title //视频标题
+		.video-title-href //稍后再看 视频标题
+			font-size: 18px!important;
+			font-weight: 500!important;
+			line-height: 26px!important;
 				
-		&:has(.bpx-player-container[data-screen='wide']) 
-			.video-info-container //防止宽屏模式下播放器盖住联合联合创作UP主区域
-				height: 150px!important;
+	.video-container-v1:has(.left-container .bpx-player-container[data-screen='wide']) //宽屏时
+		.right-container	
+			.members-info-container //创作团队
+				padding-top: 0px;
+				.membersinfo-wide
+					.header
+						display: none;
 
 
 
