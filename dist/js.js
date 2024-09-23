@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         B站仿旧版样式（番剧/综艺播放页(beta)、搜索页(beta)、播放页、稍后再看播放页）（js版）
 // @namespace    github.com/czxinc/bilibili-old-style
-// @version      9.2.3
+// @version      9.3.0
 // @description  B站仿旧版样式，仅播放页和稍后再看播放页，搜索页、番剧/综艺播放页还在改造中
 // @author       CZX Fuckerman
 // @license      GPL
@@ -4185,6 +4185,31 @@
   .reply-operation .operation-list {
     padding: 10px 0 !important;
   }
+  bili-comments {
+    --bili-comments-font-size-content: 14px;
+    --bili-comments-line-height-content: 20px;
+    --bili-rich-text-font-size: 14px;
+    --bili-rich-text-line-height: 20px;
+    --bili-font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing: auto;
+  }
+  :host(bili-comment-action-buttons-renderer) {
+    font-size: 12px;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing: auto;
+  }
+  :host(bili-comment-renderer) {
+    -webkit-font-smoothing: auto;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+  }
+  #user-name[data-user-profile-id] {
+    font-size: 12px;
+    font-weight: 700;
+  }
+  div#reply>button,
+  div>button>span#count {
+    font-size: 12px;
+  }
 `));
         styleNode.setAttribute("bilibili-old-style-fragment", "4");
         document.documentElement.appendChild(styleNode);
@@ -4814,6 +4839,31 @@
   }
   .reply-operation .operation-list {
     padding: 10px 0 !important;
+  }
+  bili-comments {
+    --bili-comments-font-size-content: 14px;
+    --bili-comments-line-height-content: 20px;
+    --bili-rich-text-font-size: 14px;
+    --bili-rich-text-line-height: 20px;
+    --bili-font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing: auto;
+  }
+  :host(bili-comment-action-buttons-renderer) {
+    font-size: 12px;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing: auto;
+  }
+  :host(bili-comment-renderer) {
+    -webkit-font-smoothing: auto;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+  }
+  #user-name[data-user-profile-id] {
+    font-size: 12px;
+    font-weight: 700;
+  }
+  div#reply>button,
+  div>button>span#count {
+    font-size: 12px;
   }
 `));
         styleNode.setAttribute("bilibili-old-style-fragment", "5");
